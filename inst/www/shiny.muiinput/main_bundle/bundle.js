@@ -42050,6 +42050,8 @@ function UploadButton(_ref) {
     console.log(event.target.files);
     var file = event.target.files;
 
+    // Area for Roma to parse multiple files
+
     // let reader = new FileReader()
     // reader.readAsDataURL(file)
 

@@ -3,6 +3,7 @@ library(shiny.muiinput)
 
 ui <- div(
   # titlePanel("reactR Input Example"),
+  #
   button_file_inputInput(inputId = 'inputFile', label = 'Upload files', filetype_accept = '.zip, .txt, .rock'),
   action_buttonInput(inputId = 'actionBTN', label = 'Submit'),
   textareaInput('textArea', 'Enter plain text', 10),

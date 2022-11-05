@@ -8,6 +8,11 @@ function UploadButton({configuration, value, setValue}) {
 
     let file = event.target.files
 
+
+    // Area for Roma to parse multiple files
+
+
+
     // let reader = new FileReader()
     // reader.readAsDataURL(file)
 
