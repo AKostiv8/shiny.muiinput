@@ -1,0 +1,28 @@
+library(shiny)
+library(shiny.muiinput)
+
+ui <- div(
+  # titlePanel("reactR Input Example"),
+  button_file_inputInput(inputId = 'inputFile', label = 'Upload files', filetype_accept = '.zip, .txt, .rock'),
+  action_buttonInput(inputId = 'actionBTN', label = 'Submit'),
+  textareaInput('textArea', 'Enter plain text', 10),
+  textOutput("textOutput")
+)
+
+server <- function(input, output, session) {
+
+  output$textOutput <- renderText({
+    sprintf("You entered: %s", input$inputFile)
+    print(input$inputFile)
+  })
+
+  observeEvent(input$actionBTN, {
+    print(input$actionBTN)
+  })
+
+  observe({
+    print(input$textArea)
+  })
+}
+
+shinyApp(ui, server)

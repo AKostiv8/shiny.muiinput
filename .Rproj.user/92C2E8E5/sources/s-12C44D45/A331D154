@@ -1,0 +1,26 @@
+{
+    "id": "A331D154",
+    "path": "~/Documents/GitHub/shiny.muiinput/R/button_file_input.R",
+    "project_path": "R/button_file_input.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1667548255978.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "23,0",
+        "scrollLine": "5"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1667591271,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1667591271159,
+    "read_only": false,
+    "read_only_alternatives": []
+}
