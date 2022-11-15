@@ -75,3 +75,6 @@ typings/
 # FuseBox cache
 .fusebox/
 .Rproj.user
+
+# Storage
+data/010/
