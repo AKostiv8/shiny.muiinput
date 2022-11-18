@@ -1,18 +1,36 @@
 import { reactShinyInput } from 'reactR';
 import Button from '@mui/material/Button';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const ActionButton = ({ configuration, value, setValue }) => {
-
+    
+  const theme = createTheme({
+      status: {
+        danger: configuration.mainColor,
+      },
+      palette: {
+        primary: {
+          main: configuration.mainColor,
+          darker: configuration.mainColor,
+        },
+        neutral: {
+          main: configuration.mainColor,
+          contrastText: configuration.fontColor,
+        },
+      },
+  });
+    
   return(
-    <Button
-      variant={configuration.variant}
-      size={configuration.size}
-      disabled={configuration.disabled}
-      onClick={() => setValue(value + 1)}
-    >
-      {configuration.label}
-    </Button>
-
+    <ThemeProvider theme={theme}>
+      <Button
+        variant={configuration.variant}
+        size={configuration.size}
+        disabled={configuration.disabled}
+        onClick={() => setValue(value + 1)}
+      >
+        {configuration.label}
+      </Button>
+    </ThemeProvider>
   );
 };
 

@@ -10,6 +10,7 @@ ui <- div(
                          ),
   action_buttonInput(inputId = 'actionBTN', label = 'Submit'),
   textareaInput('textArea', 'Enter plain text', 10),
+  input_fieldInput('textInput', 'Text field'),
   textOutput("textOutput")
 )
 
@@ -92,10 +93,10 @@ server <- function(input, output, session) {
 #     print(loadData())
   })
   
-  # observeEvent(input$inputFile, {
-  #   print(input$inputFile)
-  # })
-  # 
+  observeEvent(input$textInput, {
+    print(input$textInput)
+  })
+
 #
 #   observe({
 #     print(input$textArea)

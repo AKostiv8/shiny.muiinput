@@ -69,6 +69,12 @@ typings/
 # vuepress build output
 .vuepress/dist
 
+#zip files
+*.zip
+# test data
+test/*
+data/*
+
 # Serverless directories
 .serverless
 
@@ -86,3 +92,4 @@ data/010/
 # now add it to the `.gitignore` and the files will be ignored
 echo '.Rproj.user/**' > .gitignore
 
+node_modules

@@ -6,35 +6,30 @@
 #' @importFrom htmltools htmlDependency tags
 #'
 #' @export
-action_buttonInput <- function(
-    inputId,
-    label,
-    variant = c('contained', 'outlined', 'text'),
-    size = c("medium", "small", "large"),
-    disabled = FALSE,
-    fontColor = '#ffffff',
-    mainColor = '#e05151'
+input_fieldInput <- function(
+  inputId, 
+  label,
+  variant = c('outlined', 'filled', 'standard'),
+  fontColor = '#ffffff',
+  mainColor = '#e05151'
   ) {
-
+  
   variant <- match.arg(variant)
-  size <- match.arg(size)
-
+  
   reactR::createReactShinyInput(
     inputId,
-    "action_button",
+    "input_field",
     htmltools::htmlDependency(
-      name = "action_button-input",
+      name = "input_field-input",
       version = "1.0.0",
       src = "www/shiny.muiinput/main_bundle",
       package = "shiny.muiinput",
       script = "bundle.js"
     ),
     default = NULL,
-    configuration = list(
-      label = label,
-      variant = variant,
-      disabled = disabled,
-      size = size,
+    list(
+      label     = label,
+      variant   = variant,
       fontColor = fontColor,
       mainColor = mainColor
     ),
@@ -47,7 +42,7 @@ action_buttonInput <- function(
 #' <Add Description>
 #'
 #' @export
-updateAction_buttonInput <- function(session, inputId, value, configuration = NULL) {
+updateInput_fieldInput <- function(session, inputId, value, configuration = NULL) {
   message <- list(value = value)
   if (!is.null(configuration)) message$configuration <- configuration
   session$sendInputMessage(inputId, message);

@@ -25286,6 +25286,170 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/@mui/material/esm/styles/CssVarsProvider.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@mui/material/esm/styles/CssVarsProvider.js ***!
+  \******************************************************************/
+/*! exports provided: useColorScheme, getInitColorSchemeScript, shouldSkipGeneratingVar, Experimental_CssVarsProvider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useColorScheme", function() { return useColorScheme; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getInitColorSchemeScript", function() { return getInitColorSchemeScript; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "shouldSkipGeneratingVar", function() { return shouldSkipGeneratingVar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Experimental_CssVarsProvider", function() { return CssVarsProvider; });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/system */ "./node_modules/@mui/system/esm/index.js");
+/* harmony import */ var _experimental_extendTheme__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./experimental_extendTheme */ "./node_modules/@mui/material/esm/styles/experimental_extendTheme.js");
+/* harmony import */ var _createTypography__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./createTypography */ "./node_modules/@mui/material/esm/styles/createTypography.js");
+/* harmony import */ var _excludeVariablesFromRoot__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./excludeVariablesFromRoot */ "./node_modules/@mui/material/esm/styles/excludeVariablesFromRoot.js");
+
+
+
+
+
+var shouldSkipGeneratingVar = function shouldSkipGeneratingVar(keys) {
+  var _keys$;
+  return !!keys[0].match(/(typography|mixins|breakpoints|direction|transitions)/) || keys[0] === 'palette' && !!((_keys$ = keys[1]) != null && _keys$.match(/(mode|contrastThreshold|tonalOffset)/));
+};
+var defaultTheme = Object(_experimental_extendTheme__WEBPACK_IMPORTED_MODULE_2__["default"])();
+var _createCssVarsProvide = Object(_mui_system__WEBPACK_IMPORTED_MODULE_1__["unstable_createCssVarsProvider"])({
+    theme: defaultTheme,
+    attribute: 'data-mui-color-scheme',
+    modeStorageKey: 'mui-mode',
+    colorSchemeStorageKey: 'mui-color-scheme',
+    defaultColorScheme: {
+      light: 'light',
+      dark: 'dark'
+    },
+    resolveTheme: function resolveTheme(theme) {
+      var newTheme = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, theme, {
+        typography: Object(_createTypography__WEBPACK_IMPORTED_MODULE_3__["default"])(theme.palette, theme.typography)
+      });
+      return newTheme;
+    },
+    shouldSkipGeneratingVar: shouldSkipGeneratingVar,
+    excludeVariablesFromRoot: _excludeVariablesFromRoot__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }),
+  CssVarsProvider = _createCssVarsProvide.CssVarsProvider,
+  useColorScheme = _createCssVarsProvide.useColorScheme,
+  getInitColorSchemeScript = _createCssVarsProvide.getInitColorSchemeScript;
+
+
+/***/ }),
+
+/***/ "./node_modules/@mui/material/esm/styles/ThemeProvider.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@mui/material/esm/styles/ThemeProvider.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mui/system */ "./node_modules/@mui/system/esm/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_0__["ThemeProvider"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@mui/material/esm/styles/adaptV4Theme.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@mui/material/esm/styles/adaptV4Theme.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return adaptV4Theme; });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/system */ "./node_modules/@mui/system/esm/index.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var _excluded = ["defaultProps", "mixins", "overrides", "palette", "props", "styleOverrides"],
+  _excluded2 = ["type", "mode"];
+
+function adaptV4Theme(inputTheme) {
+  if (true) {
+    console.warn(['MUI: adaptV4Theme() is deprecated.', 'Follow the upgrade guide on https://mui.com/r/migration-v4#theme.'].join('\n'));
+  }
+  var _inputTheme$defaultPr = inputTheme.defaultProps,
+    defaultProps = _inputTheme$defaultPr === void 0 ? {} : _inputTheme$defaultPr,
+    _inputTheme$mixins = inputTheme.mixins,
+    mixins = _inputTheme$mixins === void 0 ? {} : _inputTheme$mixins,
+    _inputTheme$overrides = inputTheme.overrides,
+    overrides = _inputTheme$overrides === void 0 ? {} : _inputTheme$overrides,
+    _inputTheme$palette = inputTheme.palette,
+    palette = _inputTheme$palette === void 0 ? {} : _inputTheme$palette,
+    _inputTheme$props = inputTheme.props,
+    props = _inputTheme$props === void 0 ? {} : _inputTheme$props,
+    _inputTheme$styleOver = inputTheme.styleOverrides,
+    styleOverrides = _inputTheme$styleOver === void 0 ? {} : _inputTheme$styleOver,
+    other = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(inputTheme, _excluded);
+  var theme = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, other, {
+    components: {}
+  }); // default props
+
+  Object.keys(defaultProps).forEach(function (component) {
+    var componentValue = theme.components[component] || {};
+    componentValue.defaultProps = defaultProps[component];
+    theme.components[component] = componentValue;
+  });
+  Object.keys(props).forEach(function (component) {
+    var componentValue = theme.components[component] || {};
+    componentValue.defaultProps = props[component];
+    theme.components[component] = componentValue;
+  }); // CSS overrides
+
+  Object.keys(styleOverrides).forEach(function (component) {
+    var componentValue = theme.components[component] || {};
+    componentValue.styleOverrides = styleOverrides[component];
+    theme.components[component] = componentValue;
+  });
+  Object.keys(overrides).forEach(function (component) {
+    var componentValue = theme.components[component] || {};
+    componentValue.styleOverrides = overrides[component];
+    theme.components[component] = componentValue;
+  }); // theme.spacing
+
+  theme.spacing = Object(_mui_system__WEBPACK_IMPORTED_MODULE_2__["createSpacing"])(inputTheme.spacing); // theme.mixins.gutters
+
+  var breakpoints = Object(_mui_system__WEBPACK_IMPORTED_MODULE_2__["createBreakpoints"])(inputTheme.breakpoints || {});
+  var spacing = theme.spacing;
+  theme.mixins = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    gutters: function gutters() {
+      var styles = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      return Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+        paddingLeft: spacing(2),
+        paddingRight: spacing(2)
+      }, styles, _defineProperty({}, breakpoints.up('sm'), Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+        paddingLeft: spacing(3),
+        paddingRight: spacing(3)
+      }, styles[breakpoints.up('sm')])));
+    }
+  }, mixins);
+  var typeInput = palette.type,
+    modeInput = palette.mode,
+    paletteRest = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(palette, _excluded2);
+  var finalMode = modeInput || typeInput || 'light';
+  theme.palette = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    // theme.palette.text.hint
+    text: {
+      hint: finalMode === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.38)'
+    },
+    mode: finalMode,
+    type: finalMode
+  }, paletteRest);
+  return theme;
+}
+
+/***/ }),
+
 /***/ "./node_modules/@mui/material/esm/styles/createMixins.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@mui/material/esm/styles/createMixins.js ***!
@@ -25312,6 +25476,31 @@ function createMixins(breakpoints, mixins) {
       minHeight: 64
     }), _toolbar)
   }, mixins);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@mui/material/esm/styles/createMuiStrictModeTheme.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@mui/material/esm/styles/createMuiStrictModeTheme.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return createMuiStrictModeTheme; });
+/* harmony import */ var _mui_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mui/utils */ "./node_modules/@mui/utils/esm/index.js");
+/* harmony import */ var _createTheme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createTheme */ "./node_modules/@mui/material/esm/styles/createTheme.js");
+
+
+function createMuiStrictModeTheme(options) {
+  for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
+  return _createTheme__WEBPACK_IMPORTED_MODULE_1__["default"].apply(void 0, [Object(_mui_utils__WEBPACK_IMPORTED_MODULE_0__["deepmerge"])({
+    unstable_strictMode: true
+  }, options)].concat(args));
 }
 
 /***/ }),
@@ -25642,6 +25831,28 @@ function createPalette(palette) {
 
 /***/ }),
 
+/***/ "./node_modules/@mui/material/esm/styles/createStyles.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@mui/material/esm/styles/createStyles.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return createStyles; });
+var warnedOnce = false; // To remove in v6
+
+function createStyles(styles) {
+  if (!warnedOnce) {
+    console.warn(['MUI: createStyles from @mui/material/styles is deprecated.', 'Please use @mui/styles/createStyles'].join('\n'));
+    warnedOnce = true;
+  }
+  return styles;
+}
+
+/***/ }),
+
 /***/ "./node_modules/@mui/material/esm/styles/createTheme.js":
 /*!**************************************************************!*\
   !*** ./node_modules/@mui/material/esm/styles/createTheme.js ***!
@@ -25962,6 +26173,140 @@ function createTypography(palette, typography) {
 
 /***/ }),
 
+/***/ "./node_modules/@mui/material/esm/styles/cssUtils.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@mui/material/esm/styles/cssUtils.js ***!
+  \***********************************************************/
+/*! exports provided: isUnitless, getUnit, toUnitless, convertLength, alignProperty, fontGrid, responsiveProperty */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isUnitless", function() { return isUnitless; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUnit", function() { return getUnit; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toUnitless", function() { return toUnitless; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertLength", function() { return convertLength; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "alignProperty", function() { return alignProperty; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fontGrid", function() { return fontGrid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "responsiveProperty", function() { return responsiveProperty; });
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function isUnitless(value) {
+  return String(parseFloat(value)).length === String(value).length;
+} // Ported from Compass
+// https://github.com/Compass/compass/blob/master/core/stylesheets/compass/typography/_units.scss
+// Emulate the sass function "unit"
+
+function getUnit(input) {
+  return String(input).match(/[\d.\-+]*\s*(.*)/)[1] || '';
+} // Emulate the sass function "unitless"
+
+function toUnitless(length) {
+  return parseFloat(length);
+} // Convert any CSS <length> or <percentage> value to any another.
+// From https://github.com/KyleAMathews/convert-css-length
+
+function convertLength(baseFontSize) {
+  return function (length, toUnit) {
+    var fromUnit = getUnit(length); // Optimize for cases where `from` and `to` units are accidentally the same.
+
+    if (fromUnit === toUnit) {
+      return length;
+    } // Convert input length to pixels.
+
+    var pxLength = toUnitless(length);
+    if (fromUnit !== 'px') {
+      if (fromUnit === 'em') {
+        pxLength = toUnitless(length) * toUnitless(baseFontSize);
+      } else if (fromUnit === 'rem') {
+        pxLength = toUnitless(length) * toUnitless(baseFontSize);
+      }
+    } // Convert length in pixels to the output unit
+
+    var outputLength = pxLength;
+    if (toUnit !== 'px') {
+      if (toUnit === 'em') {
+        outputLength = pxLength / toUnitless(baseFontSize);
+      } else if (toUnit === 'rem') {
+        outputLength = pxLength / toUnitless(baseFontSize);
+      } else {
+        return length;
+      }
+    }
+    return parseFloat(outputLength.toFixed(5)) + toUnit;
+  };
+}
+function alignProperty(_ref) {
+  var size = _ref.size,
+    grid = _ref.grid;
+  var sizeBelow = size - size % grid;
+  var sizeAbove = sizeBelow + grid;
+  return size - sizeBelow < sizeAbove - size ? sizeBelow : sizeAbove;
+} // fontGrid finds a minimal grid (in rem) for the fontSize values so that the
+// lineHeight falls under a x pixels grid, 4px in the case of Material Design,
+// without changing the relative line height
+
+function fontGrid(_ref2) {
+  var lineHeight = _ref2.lineHeight,
+    pixels = _ref2.pixels,
+    htmlFontSize = _ref2.htmlFontSize;
+  return pixels / (lineHeight * htmlFontSize);
+}
+/**
+ * generate a responsive version of a given CSS property
+ * @example
+ * responsiveProperty({
+ *   cssProperty: 'fontSize',
+ *   min: 15,
+ *   max: 20,
+ *   unit: 'px',
+ *   breakpoints: [300, 600],
+ * })
+ *
+ * // this returns
+ *
+ * {
+ *   fontSize: '15px',
+ *   '@media (min-width:300px)': {
+ *     fontSize: '17.5px',
+ *   },
+ *   '@media (min-width:600px)': {
+ *     fontSize: '20px',
+ *   },
+ * }
+ * @param {Object} params
+ * @param {string} params.cssProperty - The CSS property to be made responsive
+ * @param {number} params.min - The smallest value of the CSS property
+ * @param {number} params.max - The largest value of the CSS property
+ * @param {string} [params.unit] - The unit to be used for the CSS property
+ * @param {Array.number} [params.breakpoints]  - An array of breakpoints
+ * @param {number} [params.alignStep] - Round scaled value to fall under this grid
+ * @returns {Object} responsive styles for {params.cssProperty}
+ */
+
+function responsiveProperty(_ref3) {
+  var cssProperty = _ref3.cssProperty,
+    min = _ref3.min,
+    max = _ref3.max,
+    _ref3$unit = _ref3.unit,
+    unit = _ref3$unit === void 0 ? 'rem' : _ref3$unit,
+    _ref3$breakpoints = _ref3.breakpoints,
+    breakpoints = _ref3$breakpoints === void 0 ? [600, 900, 1200] : _ref3$breakpoints,
+    _ref3$transform = _ref3.transform,
+    transform = _ref3$transform === void 0 ? null : _ref3$transform;
+  var output = _defineProperty({}, cssProperty, "".concat(min).concat(unit));
+  var factor = (max - min) / breakpoints[breakpoints.length - 1];
+  breakpoints.forEach(function (breakpoint) {
+    var value = min + factor * breakpoint;
+    if (transform !== null) {
+      value = transform(value);
+    }
+    output["@media (min-width:".concat(breakpoint, "px)")] = _defineProperty({}, cssProperty, "".concat(Math.round(value * 10000) / 10000).concat(unit));
+  });
+  return output;
+}
+
+/***/ }),
+
 /***/ "./node_modules/@mui/material/esm/styles/defaultTheme.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@mui/material/esm/styles/defaultTheme.js ***!
@@ -25975,6 +26320,531 @@ __webpack_require__.r(__webpack_exports__);
 
 var defaultTheme = Object(_createTheme__WEBPACK_IMPORTED_MODULE_0__["default"])();
 /* harmony default export */ __webpack_exports__["default"] = (defaultTheme);
+
+/***/ }),
+
+/***/ "./node_modules/@mui/material/esm/styles/excludeVariablesFromRoot.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@mui/material/esm/styles/excludeVariablesFromRoot.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+/**
+ * @internal These variables should not appear in the :root stylesheet when the `defaultMode="dark"`
+ */
+var excludeVariablesFromRoot = function excludeVariablesFromRoot(cssVarPrefix) {
+  return [].concat(_toConsumableArray(_toConsumableArray(Array(24)).map(function (_, index) {
+    return "--".concat(cssVarPrefix ? "".concat(cssVarPrefix, "-") : '', "overlays-").concat(index + 1);
+  })), ["--".concat(cssVarPrefix ? "".concat(cssVarPrefix, "-") : '', "palette-AppBar-darkBg"), "--".concat(cssVarPrefix ? "".concat(cssVarPrefix, "-") : '', "palette-AppBar-darkColor")]);
+};
+/* harmony default export */ __webpack_exports__["default"] = (excludeVariablesFromRoot);
+
+/***/ }),
+
+/***/ "./node_modules/@mui/material/esm/styles/experimental_extendTheme.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@mui/material/esm/styles/experimental_extendTheme.js ***!
+  \***************************************************************************/
+/*! exports provided: createGetCssVar, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createGetCssVar", function() { return createGetCssVar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return extendTheme; });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var _mui_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/utils */ "./node_modules/@mui/utils/esm/index.js");
+/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/system */ "./node_modules/@mui/system/esm/index.js");
+/* harmony import */ var _createTheme__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./createTheme */ "./node_modules/@mui/material/esm/styles/createTheme.js");
+/* harmony import */ var _Paper_Paper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Paper/Paper */ "./node_modules/@mui/material/esm/Paper/Paper.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+var _excluded = ["colorSchemes", "cssVarPrefix"],
+  _excluded2 = ["palette"];
+
+
+
+
+var defaultDarkOverlays = _toConsumableArray(Array(25)).map(function (_, index) {
+  if (index === 0) {
+    return undefined;
+  }
+  var overlay = Object(_Paper_Paper__WEBPACK_IMPORTED_MODULE_5__["getOverlayAlpha"])(index);
+  return "linear-gradient(rgba(255 255 255 / ".concat(overlay, "), rgba(255 255 255 / ").concat(overlay, "))");
+});
+function assignNode(obj, keys) {
+  keys.forEach(function (k) {
+    if (!obj[k]) {
+      obj[k] = {};
+    }
+  });
+}
+function setColor(obj, key, defaultValue) {
+  obj[key] = obj[key] || defaultValue;
+}
+var createGetCssVar = function createGetCssVar() {
+  var cssVarPrefix = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'mui';
+  return Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["unstable_createGetCssVar"])(cssVarPrefix);
+};
+function extendTheme() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var _colorSchemesInput$li, _colorSchemesInput$da, _colorSchemesInput$li2, _colorSchemesInput$li3, _colorSchemesInput$da2, _colorSchemesInput$da3;
+  var _options$colorSchemes = options.colorSchemes,
+    colorSchemesInput = _options$colorSchemes === void 0 ? {} : _options$colorSchemes,
+    _options$cssVarPrefix = options.cssVarPrefix,
+    cssVarPrefix = _options$cssVarPrefix === void 0 ? 'mui' : _options$cssVarPrefix,
+    input = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(options, _excluded);
+  var getCssVar = createGetCssVar(cssVarPrefix);
+  var _createThemeWithoutVa = Object(_createTheme__WEBPACK_IMPORTED_MODULE_4__["default"])(Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, input, colorSchemesInput.light && {
+      palette: (_colorSchemesInput$li = colorSchemesInput.light) == null ? void 0 : _colorSchemesInput$li.palette
+    })),
+    lightPalette = _createThemeWithoutVa.palette,
+    muiTheme = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_createThemeWithoutVa, _excluded2);
+  var _createThemeWithoutVa2 = Object(_createTheme__WEBPACK_IMPORTED_MODULE_4__["default"])({
+      palette: Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+        mode: 'dark'
+      }, (_colorSchemesInput$da = colorSchemesInput.dark) == null ? void 0 : _colorSchemesInput$da.palette)
+    }),
+    darkPalette = _createThemeWithoutVa2.palette;
+  var theme = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, muiTheme, {
+    cssVarPrefix: cssVarPrefix,
+    getCssVar: getCssVar,
+    colorSchemes: Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, colorSchemesInput, {
+      light: Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, colorSchemesInput.light, {
+        palette: lightPalette,
+        opacity: Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+          inputPlaceholder: 0.42,
+          inputUnderline: 0.42,
+          switchTrackDisabled: 0.12,
+          switchTrack: 0.38
+        }, (_colorSchemesInput$li2 = colorSchemesInput.light) == null ? void 0 : _colorSchemesInput$li2.opacity),
+        overlays: ((_colorSchemesInput$li3 = colorSchemesInput.light) == null ? void 0 : _colorSchemesInput$li3.overlays) || []
+      }),
+      dark: Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, colorSchemesInput.dark, {
+        palette: darkPalette,
+        opacity: Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+          inputPlaceholder: 0.5,
+          inputUnderline: 0.7,
+          switchTrackDisabled: 0.2,
+          switchTrack: 0.3
+        }, (_colorSchemesInput$da2 = colorSchemesInput.dark) == null ? void 0 : _colorSchemesInput$da2.opacity),
+        overlays: ((_colorSchemesInput$da3 = colorSchemesInput.dark) == null ? void 0 : _colorSchemesInput$da3.overlays) || defaultDarkOverlays
+      })
+    })
+  });
+  Object.keys(theme.colorSchemes).forEach(function (key) {
+    var palette = theme.colorSchemes[key].palette; // attach black & white channels to common node
+
+    if (key === 'light') {
+      setColor(palette.common, 'background', '#fff');
+      setColor(palette.common, 'onBackground', '#000');
+    } else {
+      setColor(palette.common, 'background', '#000');
+      setColor(palette.common, 'onBackground', '#fff');
+    } // assign component variables
+
+    assignNode(palette, ['Alert', 'AppBar', 'Avatar', 'Chip', 'FilledInput', 'LinearProgress', 'Skeleton', 'Slider', 'SnackbarContent', 'SpeedDialAction', 'StepConnector', 'StepContent', 'Switch', 'TableCell', 'Tooltip']);
+    if (key === 'light') {
+      setColor(palette.Alert, 'errorColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.error.light, 0.6));
+      setColor(palette.Alert, 'infoColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.info.light, 0.6));
+      setColor(palette.Alert, 'successColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.success.light, 0.6));
+      setColor(palette.Alert, 'warningColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.warning.light, 0.6));
+      setColor(palette.Alert, 'errorFilledBg', getCssVar('palette-error-main'));
+      setColor(palette.Alert, 'infoFilledBg', getCssVar('palette-info-main'));
+      setColor(palette.Alert, 'successFilledBg', getCssVar('palette-success-main'));
+      setColor(palette.Alert, 'warningFilledBg', getCssVar('palette-warning-main'));
+      setColor(palette.Alert, 'errorFilledColor', lightPalette.getContrastText(palette.error.main));
+      setColor(palette.Alert, 'infoFilledColor', lightPalette.getContrastText(palette.info.main));
+      setColor(palette.Alert, 'successFilledColor', lightPalette.getContrastText(palette.success.main));
+      setColor(palette.Alert, 'warningFilledColor', lightPalette.getContrastText(palette.warning.main));
+      setColor(palette.Alert, 'errorStandardBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.error.light, 0.9));
+      setColor(palette.Alert, 'infoStandardBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.info.light, 0.9));
+      setColor(palette.Alert, 'successStandardBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.success.light, 0.9));
+      setColor(palette.Alert, 'warningStandardBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.warning.light, 0.9));
+      setColor(palette.Alert, 'errorIconColor', getCssVar('palette-error-light'));
+      setColor(palette.Alert, 'infoIconColor', getCssVar('palette-info-light'));
+      setColor(palette.Alert, 'successIconColor', getCssVar('palette-success-light'));
+      setColor(palette.Alert, 'warningIconColor', getCssVar('palette-warning-light'));
+      setColor(palette.AppBar, 'defaultBg', getCssVar('palette-grey-100'));
+      setColor(palette.Avatar, 'defaultBg', getCssVar('palette-grey-400'));
+      setColor(palette.Chip, 'defaultBorder', getCssVar('palette-grey-400'));
+      setColor(palette.Chip, 'defaultAvatarColor', getCssVar('palette-grey-700'));
+      setColor(palette.Chip, 'defaultIconColor', getCssVar('palette-grey-700'));
+      setColor(palette.FilledInput, 'bg', 'rgba(0, 0, 0, 0.06)');
+      setColor(palette.FilledInput, 'hoverBg', 'rgba(0, 0, 0, 0.09)');
+      setColor(palette.FilledInput, 'disabledBg', 'rgba(0, 0, 0, 0.12)');
+      setColor(palette.LinearProgress, 'primaryBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.primary.main, 0.62));
+      setColor(palette.LinearProgress, 'secondaryBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.secondary.main, 0.62));
+      setColor(palette.LinearProgress, 'errorBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.error.main, 0.62));
+      setColor(palette.LinearProgress, 'infoBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.info.main, 0.62));
+      setColor(palette.LinearProgress, 'successBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.success.main, 0.62));
+      setColor(palette.LinearProgress, 'warningBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.warning.main, 0.62));
+      setColor(palette.Skeleton, 'bg', "rgba(".concat(getCssVar('palette-text-primaryChannel'), " / 0.11)"));
+      setColor(palette.Slider, 'primaryTrack', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.primary.main, 0.62));
+      setColor(palette.Slider, 'secondaryTrack', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.secondary.main, 0.62));
+      setColor(palette.Slider, 'errorTrack', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.error.main, 0.62));
+      setColor(palette.Slider, 'infoTrack', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.info.main, 0.62));
+      setColor(palette.Slider, 'successTrack', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.success.main, 0.62));
+      setColor(palette.Slider, 'warningTrack', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.warning.main, 0.62));
+      var snackbarContentBackground = Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["emphasize"])(palette.background["default"], 0.8);
+      setColor(palette.SnackbarContent, 'bg', snackbarContentBackground);
+      setColor(palette.SnackbarContent, 'color', lightPalette.getContrastText(snackbarContentBackground));
+      setColor(palette.SpeedDialAction, 'fabHoverBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["emphasize"])(palette.background.paper, 0.15));
+      setColor(palette.StepConnector, 'border', getCssVar('palette-grey-400'));
+      setColor(palette.StepContent, 'border', getCssVar('palette-grey-400'));
+      setColor(palette.Switch, 'defaultColor', getCssVar('palette-common-white'));
+      setColor(palette.Switch, 'defaultDisabledColor', getCssVar('palette-grey-100'));
+      setColor(palette.Switch, 'primaryDisabledColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.primary.main, 0.62));
+      setColor(palette.Switch, 'secondaryDisabledColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.secondary.main, 0.62));
+      setColor(palette.Switch, 'errorDisabledColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.error.main, 0.62));
+      setColor(palette.Switch, 'infoDisabledColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.info.main, 0.62));
+      setColor(palette.Switch, 'successDisabledColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.success.main, 0.62));
+      setColor(palette.Switch, 'warningDisabledColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.warning.main, 0.62));
+      setColor(palette.TableCell, 'border', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["alpha"])(palette.divider, 1), 0.88));
+      setColor(palette.Tooltip, 'bg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["alpha"])(palette.grey[700], 0.92));
+    } else {
+      setColor(palette.Alert, 'errorColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.error.light, 0.6));
+      setColor(palette.Alert, 'infoColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.info.light, 0.6));
+      setColor(palette.Alert, 'successColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.success.light, 0.6));
+      setColor(palette.Alert, 'warningColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["lighten"])(palette.warning.light, 0.6));
+      setColor(palette.Alert, 'errorFilledBg', getCssVar('palette-error-dark'));
+      setColor(palette.Alert, 'infoFilledBg', getCssVar('palette-info-dark'));
+      setColor(palette.Alert, 'successFilledBg', getCssVar('palette-success-dark'));
+      setColor(palette.Alert, 'warningFilledBg', getCssVar('palette-warning-dark'));
+      setColor(palette.Alert, 'errorFilledColor', darkPalette.getContrastText(palette.error.dark));
+      setColor(palette.Alert, 'infoFilledColor', darkPalette.getContrastText(palette.info.dark));
+      setColor(palette.Alert, 'successFilledColor', darkPalette.getContrastText(palette.success.dark));
+      setColor(palette.Alert, 'warningFilledColor', darkPalette.getContrastText(palette.warning.dark));
+      setColor(palette.Alert, 'errorStandardBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.error.light, 0.9));
+      setColor(palette.Alert, 'infoStandardBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.info.light, 0.9));
+      setColor(palette.Alert, 'successStandardBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.success.light, 0.9));
+      setColor(palette.Alert, 'warningStandardBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.warning.light, 0.9));
+      setColor(palette.Alert, 'errorIconColor', getCssVar('palette-error-main'));
+      setColor(palette.Alert, 'infoIconColor', getCssVar('palette-info-main'));
+      setColor(palette.Alert, 'successIconColor', getCssVar('palette-success-main'));
+      setColor(palette.Alert, 'warningIconColor', getCssVar('palette-warning-main'));
+      setColor(palette.AppBar, 'defaultBg', getCssVar('palette-grey-900'));
+      setColor(palette.AppBar, 'darkBg', getCssVar('palette-background-paper')); // specific for dark mode
+
+      setColor(palette.AppBar, 'darkColor', getCssVar('palette-text-primary')); // specific for dark mode
+
+      setColor(palette.Avatar, 'defaultBg', getCssVar('palette-grey-600'));
+      setColor(palette.Chip, 'defaultBorder', getCssVar('palette-grey-700'));
+      setColor(palette.Chip, 'defaultAvatarColor', getCssVar('palette-grey-300'));
+      setColor(palette.Chip, 'defaultIconColor', getCssVar('palette-grey-300'));
+      setColor(palette.FilledInput, 'bg', 'rgba(255, 255, 255, 0.09)');
+      setColor(palette.FilledInput, 'hoverBg', 'rgba(255, 255, 255, 0.13)');
+      setColor(palette.FilledInput, 'disabledBg', 'rgba(255, 255, 255, 0.12)');
+      setColor(palette.LinearProgress, 'primaryBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.primary.main, 0.5));
+      setColor(palette.LinearProgress, 'secondaryBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.secondary.main, 0.5));
+      setColor(palette.LinearProgress, 'errorBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.error.main, 0.5));
+      setColor(palette.LinearProgress, 'infoBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.info.main, 0.5));
+      setColor(palette.LinearProgress, 'successBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.success.main, 0.5));
+      setColor(palette.LinearProgress, 'warningBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.warning.main, 0.5));
+      setColor(palette.Skeleton, 'bg', "rgba(".concat(getCssVar('palette-text-primaryChannel'), " / 0.13)"));
+      setColor(palette.Slider, 'primaryTrack', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.primary.main, 0.5));
+      setColor(palette.Slider, 'secondaryTrack', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.secondary.main, 0.5));
+      setColor(palette.Slider, 'errorTrack', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.error.main, 0.5));
+      setColor(palette.Slider, 'infoTrack', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.info.main, 0.5));
+      setColor(palette.Slider, 'successTrack', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.success.main, 0.5));
+      setColor(palette.Slider, 'warningTrack', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.warning.main, 0.5));
+      var _snackbarContentBackground = Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["emphasize"])(palette.background["default"], 0.98);
+      setColor(palette.SnackbarContent, 'bg', _snackbarContentBackground);
+      setColor(palette.SnackbarContent, 'color', darkPalette.getContrastText(_snackbarContentBackground));
+      setColor(palette.SpeedDialAction, 'fabHoverBg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["emphasize"])(palette.background.paper, 0.15));
+      setColor(palette.StepConnector, 'border', getCssVar('palette-grey-600'));
+      setColor(palette.StepContent, 'border', getCssVar('palette-grey-600'));
+      setColor(palette.Switch, 'defaultColor', getCssVar('palette-grey-300'));
+      setColor(palette.Switch, 'defaultDisabledColor', getCssVar('palette-grey-600'));
+      setColor(palette.Switch, 'primaryDisabledColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.primary.main, 0.55));
+      setColor(palette.Switch, 'secondaryDisabledColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.secondary.main, 0.55));
+      setColor(palette.Switch, 'errorDisabledColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.error.main, 0.55));
+      setColor(palette.Switch, 'infoDisabledColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.info.main, 0.55));
+      setColor(palette.Switch, 'successDisabledColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.success.main, 0.55));
+      setColor(palette.Switch, 'warningDisabledColor', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(palette.warning.main, 0.55));
+      setColor(palette.TableCell, 'border', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["darken"])(Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["alpha"])(palette.divider, 1), 0.68));
+      setColor(palette.Tooltip, 'bg', Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["alpha"])(palette.grey[700], 0.92));
+    }
+    palette.common.backgroundChannel = Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["colorChannel"])(palette.common.background);
+    palette.common.onBackgroundChannel = Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["colorChannel"])(palette.common.onBackground);
+    palette.dividerChannel = Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["colorChannel"])(palette.divider);
+    Object.keys(palette).forEach(function (color) {
+      var colors = palette[color]; // Color palettes: primary, secondary, error, info, success, and warning
+
+      if (colors.main) {
+        palette[color].mainChannel = Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["colorChannel"])(colors.main);
+      }
+      if (colors.light) {
+        palette[color].lightChannel = Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["colorChannel"])(colors.light);
+      }
+      if (colors.dark) {
+        palette[color].darkChannel = Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["colorChannel"])(colors.dark);
+      }
+      if (colors.contrastText) {
+        palette[color].contrastTextChannel = Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["colorChannel"])(colors.contrastText);
+      } // Text colors: text.primary, text.secondary
+
+      if (colors.primary) {
+        palette[color].primaryChannel = Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["colorChannel"])(colors.primary);
+      }
+      if (colors.secondary) {
+        palette[color].secondaryChannel = Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["colorChannel"])(colors.secondary);
+      } // Action colors: action.active, action.selected
+
+      if (colors.active) {
+        palette[color].activeChannel = Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["colorChannel"])(colors.active);
+      }
+      if (colors.selected) {
+        palette[color].selectedChannel = Object(_mui_system__WEBPACK_IMPORTED_MODULE_3__["colorChannel"])(colors.selected);
+      }
+    });
+  });
+  for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
+  theme = args.reduce(function (acc, argument) {
+    return Object(_mui_utils__WEBPACK_IMPORTED_MODULE_2__["deepmerge"])(acc, argument);
+  }, theme);
+  return theme;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@mui/material/esm/styles/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@mui/material/esm/styles/index.js ***!
+  \********************************************************/
+/*! exports provided: adaptV4Theme, hexToRgb, rgbToHex, hslToRgb, decomposeColor, recomposeColor, getContrastRatio, getLuminance, emphasize, alpha, darken, lighten, css, keyframes, experimental_sx, createTheme, createMuiTheme, unstable_createMuiStrictModeTheme, createStyles, unstable_getUnit, unstable_toUnitless, responsiveFontSizes, duration, easing, useTheme, useThemeProps, styled, experimentalStyled, ThemeProvider, StyledEngineProvider, makeStyles, withStyles, withTheme, useColorScheme, getInitColorSchemeScript, shouldSkipGeneratingVar, Experimental_CssVarsProvider, experimental_extendTheme */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _adaptV4Theme__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./adaptV4Theme */ "./node_modules/@mui/material/esm/styles/adaptV4Theme.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "adaptV4Theme", function() { return _adaptV4Theme__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony import */ var _mui_system__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/system */ "./node_modules/@mui/system/esm/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "hexToRgb", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["hexToRgb"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "rgbToHex", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["rgbToHex"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "hslToRgb", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["hslToRgb"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "decomposeColor", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["decomposeColor"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "recomposeColor", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["recomposeColor"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getContrastRatio", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["getContrastRatio"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getLuminance", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["getLuminance"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "emphasize", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["emphasize"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "alpha", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["alpha"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "darken", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["darken"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "lighten", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["lighten"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "css", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["css"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "keyframes", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["keyframes"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "experimental_sx", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["experimental_sx"]; });
+
+/* harmony import */ var _createTheme__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createTheme */ "./node_modules/@mui/material/esm/styles/createTheme.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createTheme", function() { return _createTheme__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createMuiTheme", function() { return _createTheme__WEBPACK_IMPORTED_MODULE_2__["createMuiTheme"]; });
+
+/* harmony import */ var _createMuiStrictModeTheme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./createMuiStrictModeTheme */ "./node_modules/@mui/material/esm/styles/createMuiStrictModeTheme.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unstable_createMuiStrictModeTheme", function() { return _createMuiStrictModeTheme__WEBPACK_IMPORTED_MODULE_3__["default"]; });
+
+/* harmony import */ var _createStyles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./createStyles */ "./node_modules/@mui/material/esm/styles/createStyles.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createStyles", function() { return _createStyles__WEBPACK_IMPORTED_MODULE_4__["default"]; });
+
+/* harmony import */ var _cssUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./cssUtils */ "./node_modules/@mui/material/esm/styles/cssUtils.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unstable_getUnit", function() { return _cssUtils__WEBPACK_IMPORTED_MODULE_5__["getUnit"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unstable_toUnitless", function() { return _cssUtils__WEBPACK_IMPORTED_MODULE_5__["toUnitless"]; });
+
+/* harmony import */ var _responsiveFontSizes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./responsiveFontSizes */ "./node_modules/@mui/material/esm/styles/responsiveFontSizes.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "responsiveFontSizes", function() { return _responsiveFontSizes__WEBPACK_IMPORTED_MODULE_6__["default"]; });
+
+/* harmony import */ var _createTransitions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./createTransitions */ "./node_modules/@mui/material/esm/styles/createTransitions.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "duration", function() { return _createTransitions__WEBPACK_IMPORTED_MODULE_7__["duration"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "easing", function() { return _createTransitions__WEBPACK_IMPORTED_MODULE_7__["easing"]; });
+
+/* harmony import */ var _useTheme__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./useTheme */ "./node_modules/@mui/material/esm/styles/useTheme.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useTheme", function() { return _useTheme__WEBPACK_IMPORTED_MODULE_8__["default"]; });
+
+/* harmony import */ var _useThemeProps__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./useThemeProps */ "./node_modules/@mui/material/esm/styles/useThemeProps.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useThemeProps", function() { return _useThemeProps__WEBPACK_IMPORTED_MODULE_9__["default"]; });
+
+/* harmony import */ var _styled__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styled */ "./node_modules/@mui/material/esm/styles/styled.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "styled", function() { return _styled__WEBPACK_IMPORTED_MODULE_10__["default"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "experimentalStyled", function() { return _styled__WEBPACK_IMPORTED_MODULE_10__["default"]; });
+
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/@mui/material/esm/styles/ThemeProvider.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ThemeProvider", function() { return _ThemeProvider__WEBPACK_IMPORTED_MODULE_11__["default"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StyledEngineProvider", function() { return _mui_system__WEBPACK_IMPORTED_MODULE_1__["StyledEngineProvider"]; });
+
+/* harmony import */ var _makeStyles__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./makeStyles */ "./node_modules/@mui/material/esm/styles/makeStyles.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "makeStyles", function() { return _makeStyles__WEBPACK_IMPORTED_MODULE_12__["default"]; });
+
+/* harmony import */ var _withStyles__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./withStyles */ "./node_modules/@mui/material/esm/styles/withStyles.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "withStyles", function() { return _withStyles__WEBPACK_IMPORTED_MODULE_13__["default"]; });
+
+/* harmony import */ var _withTheme__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./withTheme */ "./node_modules/@mui/material/esm/styles/withTheme.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "withTheme", function() { return _withTheme__WEBPACK_IMPORTED_MODULE_14__["default"]; });
+
+/* harmony import */ var _CssVarsProvider__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./CssVarsProvider */ "./node_modules/@mui/material/esm/styles/CssVarsProvider.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "useColorScheme", function() { return _CssVarsProvider__WEBPACK_IMPORTED_MODULE_15__["useColorScheme"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getInitColorSchemeScript", function() { return _CssVarsProvider__WEBPACK_IMPORTED_MODULE_15__["getInitColorSchemeScript"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "shouldSkipGeneratingVar", function() { return _CssVarsProvider__WEBPACK_IMPORTED_MODULE_15__["shouldSkipGeneratingVar"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Experimental_CssVarsProvider", function() { return _CssVarsProvider__WEBPACK_IMPORTED_MODULE_15__["Experimental_CssVarsProvider"]; });
+
+/* harmony import */ var _experimental_extendTheme__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./experimental_extendTheme */ "./node_modules/@mui/material/esm/styles/experimental_extendTheme.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "experimental_extendTheme", function() { return _experimental_extendTheme__WEBPACK_IMPORTED_MODULE_16__["default"]; });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // The legacy utilities from @mui/styles
+// These are just empty functions that throws when invoked
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@mui/material/esm/styles/makeStyles.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@mui/material/esm/styles/makeStyles.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return makeStyles; });
+/* harmony import */ var _mui_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mui/utils */ "./node_modules/@mui/utils/esm/index.js");
+
+function makeStyles() {
+  throw new Error( true ? "MUI: makeStyles is no longer exported from @mui/material/styles.\nYou have to import it from @mui/styles.\nSee https://mui.com/r/migration-v4/#mui-material-styles for more details." : undefined);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@mui/material/esm/styles/responsiveFontSizes.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@mui/material/esm/styles/responsiveFontSizes.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return responsiveFontSizes; });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _mui_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/utils */ "./node_modules/@mui/utils/esm/index.js");
+/* harmony import */ var _cssUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cssUtils */ "./node_modules/@mui/material/esm/styles/cssUtils.js");
+
+
+
+function responsiveFontSizes(themeInput) {
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var _options$breakpoints = options.breakpoints,
+    breakpoints = _options$breakpoints === void 0 ? ['sm', 'md', 'lg'] : _options$breakpoints,
+    _options$disableAlign = options.disableAlign,
+    disableAlign = _options$disableAlign === void 0 ? false : _options$disableAlign,
+    _options$factor = options.factor,
+    factor = _options$factor === void 0 ? 2 : _options$factor,
+    _options$variants = options.variants,
+    variants = _options$variants === void 0 ? ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'subtitle1', 'subtitle2', 'body1', 'body2', 'caption', 'button', 'overline'] : _options$variants;
+  var theme = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, themeInput);
+  theme.typography = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, theme.typography);
+  var typography = theme.typography; // Convert between CSS lengths e.g. em->px or px->rem
+  // Set the baseFontSize for your project. Defaults to 16px (also the browser default).
+
+  var convert = Object(_cssUtils__WEBPACK_IMPORTED_MODULE_2__["convertLength"])(typography.htmlFontSize);
+  var breakpointValues = breakpoints.map(function (x) {
+    return theme.breakpoints.values[x];
+  });
+  variants.forEach(function (variant) {
+    var style = typography[variant];
+    var remFontSize = parseFloat(convert(style.fontSize, 'rem'));
+    if (remFontSize <= 1) {
+      return;
+    }
+    var maxFontSize = remFontSize;
+    var minFontSize = 1 + (maxFontSize - 1) / factor;
+    var lineHeight = style.lineHeight;
+    if (!Object(_cssUtils__WEBPACK_IMPORTED_MODULE_2__["isUnitless"])(lineHeight) && !disableAlign) {
+      throw new Error( true ? "MUI: Unsupported non-unitless line height with grid alignment.\nUse unitless line heights instead." : undefined);
+    }
+    if (!Object(_cssUtils__WEBPACK_IMPORTED_MODULE_2__["isUnitless"])(lineHeight)) {
+      // make it unitless
+      lineHeight = parseFloat(convert(lineHeight, 'rem')) / parseFloat(remFontSize);
+    }
+    var transform = null;
+    if (!disableAlign) {
+      transform = function transform(value) {
+        return Object(_cssUtils__WEBPACK_IMPORTED_MODULE_2__["alignProperty"])({
+          size: value,
+          grid: Object(_cssUtils__WEBPACK_IMPORTED_MODULE_2__["fontGrid"])({
+            pixels: 4,
+            lineHeight: lineHeight,
+            htmlFontSize: typography.htmlFontSize
+          })
+        });
+      };
+    }
+    typography[variant] = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, style, Object(_cssUtils__WEBPACK_IMPORTED_MODULE_2__["responsiveProperty"])({
+      cssProperty: 'fontSize',
+      min: minFontSize,
+      max: maxFontSize,
+      unit: 'rem',
+      breakpoints: breakpointValues,
+      transform: transform
+    }));
+  });
+  return theme;
+}
 
 /***/ }),
 
@@ -26076,6 +26946,42 @@ function useThemeProps(_ref) {
     name: name,
     defaultTheme: _defaultTheme__WEBPACK_IMPORTED_MODULE_1__["default"]
   });
+}
+
+/***/ }),
+
+/***/ "./node_modules/@mui/material/esm/styles/withStyles.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@mui/material/esm/styles/withStyles.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return withStyles; });
+/* harmony import */ var _mui_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mui/utils */ "./node_modules/@mui/utils/esm/index.js");
+
+function withStyles() {
+  throw new Error( true ? "MUI: withStyles is no longer exported from @mui/material/styles.\nYou have to import it from @mui/styles.\nSee https://mui.com/r/migration-v4/#mui-material-styles for more details." : undefined);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@mui/material/esm/styles/withTheme.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@mui/material/esm/styles/withTheme.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return withTheme; });
+/* harmony import */ var _mui_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mui/utils */ "./node_modules/@mui/utils/esm/index.js");
+
+function withTheme() {
+  throw new Error( true ? "MUI: withTheme is no longer exported from @mui/material/styles.\nYou have to import it from @mui/styles.\nSee https://mui.com/r/migration-v4/#mui-material-styles for more details." : undefined);
 }
 
 /***/ }),
@@ -47755,6 +48661,128 @@ exports.clearImmediate = typeof self !== "undefined" && self.clearImmediate || t
 
 /***/ }),
 
+/***/ "./node_modules/use-debounce/dist/index.module.js":
+/*!********************************************************!*\
+  !*** ./node_modules/use-debounce/dist/index.module.js ***!
+  \********************************************************/
+/*! exports provided: useDebounce, useDebouncedCallback, useThrottledCallback */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useDebounce", function() { return o; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useDebouncedCallback", function() { return c; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useThrottledCallback", function() { return f; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function c(u, e, c) {
+  var i = this,
+    a = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null),
+    o = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(0),
+    f = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null),
+    l = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])([]),
+    m = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(),
+    v = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(),
+    d = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(u),
+    p = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(!0);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    d.current = u;
+  }, [u]);
+  var g = !e && 0 !== e && "undefined" != typeof window;
+  if ("function" != typeof u) throw new TypeError("Expected a function");
+  e = +e || 0;
+  var w = !!(c = c || {}).leading,
+    s = !("trailing" in c) || !!c.trailing,
+    x = ("maxWait" in c),
+    y = x ? Math.max(+c.maxWait || 0, e) : null;
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    return p.current = !0, function () {
+      p.current = !1;
+    };
+  }, []);
+  var h = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
+    var r = function r(_r) {
+        var n = l.current,
+          t = m.current;
+        return l.current = m.current = null, o.current = _r, v.current = d.current.apply(t, n);
+      },
+      n = function n(r, _n) {
+        g && cancelAnimationFrame(f.current), f.current = g ? requestAnimationFrame(r) : setTimeout(r, _n);
+      },
+      t = function t(r) {
+        if (!p.current) return !1;
+        var n = r - a.current;
+        return !a.current || n >= e || n < 0 || x && r - o.current >= y;
+      },
+      u = function u(n) {
+        return f.current = null, s && l.current ? r(n) : (l.current = m.current = null, v.current);
+      },
+      c = function r() {
+        var c = Date.now();
+        if (t(c)) return u(c);
+        if (p.current) {
+          var i = e - (c - a.current),
+            f = x ? Math.min(i, y - (c - o.current)) : i;
+          n(r, f);
+        }
+      },
+      h = function h() {
+        var u = Date.now(),
+          d = t(u);
+        if (l.current = [].slice.call(arguments), m.current = i, a.current = u, d) {
+          if (!f.current && p.current) return o.current = a.current, n(c, e), w ? r(a.current) : v.current;
+          if (x) return n(c, e), r(a.current);
+        }
+        return f.current || n(c, e), v.current;
+      };
+    return h.cancel = function () {
+      f.current && (g ? cancelAnimationFrame(f.current) : clearTimeout(f.current)), o.current = 0, l.current = a.current = m.current = f.current = null;
+    }, h.isPending = function () {
+      return !!f.current;
+    }, h.flush = function () {
+      return f.current ? u(Date.now()) : v.current;
+    }, h;
+  }, [w, x, e, y, s, g]);
+  return h;
+}
+function i(r, n) {
+  return r === n;
+}
+function a(r) {
+  return "function" == typeof r ? function () {
+    return r;
+  } : r;
+}
+function o(n, t, o) {
+  var f,
+    l,
+    m = o && o.equalityFn || i,
+    v = (f = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(a(n)), l = f[1], [f[0], Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function (r) {
+      return l(a(r));
+    }, [])]),
+    d = v[0],
+    p = v[1],
+    g = c(Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function (r) {
+      return p(r);
+    }, [p]), t, o),
+    w = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(n);
+  return m(w.current, n) || (g(n), w.current = n), [d, g];
+}
+function f(r, n, t) {
+  var u = void 0 === t ? {} : t,
+    e = u.leading,
+    i = u.trailing;
+  return c(r, n, {
+    maxWait: n,
+    leading: void 0 === e || e,
+    trailing: void 0 === i || i
+  });
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -47830,20 +48858,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactR__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reactR */ "reactR");
 /* harmony import */ var reactR__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(reactR__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/esm/Button/index.js");
+/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/esm/styles/index.js");
+
 
 
 var ActionButton = function ActionButton(_ref) {
   var configuration = _ref.configuration,
     value = _ref.value,
     setValue = _ref.setValue;
-  return /*#__PURE__*/React.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  var theme = Object(_mui_material_styles__WEBPACK_IMPORTED_MODULE_2__["createTheme"])({
+    status: {
+      danger: configuration.mainColor
+    },
+    palette: {
+      primary: {
+        main: configuration.mainColor,
+        darker: configuration.mainColor
+      },
+      neutral: {
+        main: configuration.mainColor,
+        contrastText: configuration.fontColor
+      }
+    }
+  });
+  return /*#__PURE__*/React.createElement(_mui_material_styles__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
+    theme: theme
+  }, /*#__PURE__*/React.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     variant: configuration.variant,
     size: configuration.size,
     disabled: configuration.disabled,
     onClick: function onClick() {
       return setValue(value + 1);
     }
-  }, configuration.label);
+  }, configuration.label));
 };
 function initActionButton() {
   return Object(reactR__WEBPACK_IMPORTED_MODULE_0__["reactShinyInput"])('.action_button', 'shiny.muiinput.action_button', ActionButton);
@@ -47938,6 +48985,79 @@ function initUploadButton() {
 
 /***/ }),
 
+/***/ "./srcjs/input_field.js":
+/*!******************************!*\
+  !*** ./srcjs/input_field.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return initTextInput; });
+/* harmony import */ var reactR__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reactR */ "reactR");
+/* harmony import */ var reactR__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(reactR__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _mui_material_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/material/TextField */ "./node_modules/@mui/material/esm/TextField/index.js");
+/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/esm/styles/index.js");
+/* harmony import */ var use_debounce__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! use-debounce */ "./node_modules/use-debounce/dist/index.module.js");
+
+
+
+
+
+var TextInput = function TextInput(_ref) {
+  var configuration = _ref.configuration,
+    value = _ref.value,
+    setValue = _ref.setValue;
+  var theme = Object(_mui_material_styles__WEBPACK_IMPORTED_MODULE_3__["createTheme"])({
+    status: {
+      danger: configuration.mainColor
+    },
+    palette: {
+      primary: {
+        main: configuration.mainColor,
+        darker: configuration.mainColor
+      },
+      neutral: {
+        main: configuration.mainColor,
+        contrastText: configuration.fontColor
+      }
+    }
+  });
+
+  // Debounce callback
+  var debounced = Object(use_debounce__WEBPACK_IMPORTED_MODULE_4__["useDebouncedCallback"])(
+  // function
+  function (value) {
+    setValue(value);
+  },
+  // delay in ms
+  500);
+  var handleOnChange = function handleOnChange(event) {
+    debounced(event.target.value);
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_mui_material_styles__WEBPACK_IMPORTED_MODULE_3__["ThemeProvider"], {
+    theme: theme
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: configuration.label,
+    variant: configuration.variant,
+    onChange: handleOnChange,
+    color: "neutral",
+    inputProps: {
+      style: {
+        color: configuration.fontColor
+      }
+    }
+  }));
+};
+function initTextInput() {
+  return Object(reactR__WEBPACK_IMPORTED_MODULE_0__["reactShinyInput"])('.input_field', 'shiny.muiinput.input_field', TextInput);
+}
+
+/***/ }),
+
 /***/ "./srcjs/main.jsx":
 /*!************************!*\
   !*** ./srcjs/main.jsx ***!
@@ -47950,12 +49070,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _button_file_input_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./button_file_input.jsx */ "./srcjs/button_file_input.jsx");
 /* harmony import */ var _action_button_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./action_button.js */ "./srcjs/action_button.js");
 /* harmony import */ var _textarea_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./textarea.js */ "./srcjs/textarea.js");
+/* harmony import */ var _input_field_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./input_field.js */ "./srcjs/input_field.js");
+
 
 
 
 Object(_button_file_input_jsx__WEBPACK_IMPORTED_MODULE_0__["default"])();
 Object(_action_button_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
 Object(_textarea_js__WEBPACK_IMPORTED_MODULE_2__["default"])();
+Object(_input_field_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
 
 /***/ }),
 
@@ -47974,6 +49097,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _mui_material_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/material/TextField */ "./node_modules/@mui/material/esm/TextField/index.js");
+/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/esm/styles/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -47983,10 +49107,26 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var TextArea = function TextArea(_ref) {
   var configuration = _ref.configuration,
     value = _ref.value,
     setValue = _ref.setValue;
+  var theme = Object(_mui_material_styles__WEBPACK_IMPORTED_MODULE_3__["createTheme"])({
+    status: {
+      danger: configuration.mainColor
+    },
+    palette: {
+      primary: {
+        main: configuration.mainColor,
+        darker: configuration.mainColor
+      },
+      neutral: {
+        main: configuration.mainColor,
+        contrastText: configuration.fontColor
+      }
+    }
+  });
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
     _useState2 = _slicedToArray(_useState, 2),
     timer = _useState2[0],
@@ -48003,12 +49143,19 @@ var TextArea = function TextArea(_ref) {
       return clearTimeout(delayDebounceFn);
     };
   }, [value]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_mui_material_styles__WEBPACK_IMPORTED_MODULE_3__["ThemeProvider"], {
+    theme: theme
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: "outlined-multiline-static",
     label: configuration.label,
     multiline: true,
     rows: configuration.rowsInit,
-    onChange: handleOnChange
+    onChange: handleOnChange,
+    inputProps: {
+      style: {
+        color: configuration.fontColor
+      }
+    }
   }));
 };
 function initTextArea() {
