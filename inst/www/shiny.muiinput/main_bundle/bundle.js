@@ -47918,10 +47918,12 @@ function UploadButton(_ref) {
     variant: "contained",
     component: "label"
   }, configuration.label, /*#__PURE__*/React.createElement("input", {
-    type: "file",
     id: "file",
+    hidden: true,
     className: "input-file",
     accept: configuration.filetype_accept,
+    multiple: true,
+    type: "file",
     onChange: function onChange(e) {
       var files = e.target.files;
       for (var i = 0; i < files.length; i++) {
@@ -48023,7 +48025,7 @@ function initTextArea() {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! regenerator-runtime/runtime.js */"./node_modules/regenerator-runtime/runtime.js");
-module.exports = __webpack_require__(/*! /Users/roman/shiny.muiinput/srcjs/main.jsx */"./srcjs/main.jsx");
+module.exports = __webpack_require__(/*! /Users/anastasiia/Documents/GitHub/shiny.muiinput/srcjs/main.jsx */"./srcjs/main.jsx");
 
 
 /***/ }),

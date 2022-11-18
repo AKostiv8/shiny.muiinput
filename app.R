@@ -3,25 +3,16 @@ library(shiny.muiinput)
 
 ui <- div(
   # titlePanel("reactR Input Example"),
-  button_file_inputInput(inputId = 'inputFile', label = 'Upload files', filetype_accept = '.zip, .txt, .rock'),
+  button_file_inputInput(inputId = 'inputFile',
+                         label = 'Upload files', 
+                         filetype_accept = '.zip, .txt, .rock, text/yaml',
+                         outputDirPath = '010---raw-sources'
+                         ),
   action_buttonInput(inputId = 'actionBTN', label = 'Submit'),
   textareaInput('textArea', 'Enter plain text', 10),
   textOutput("textOutput")
 )
 
-outputDir <- "data/010"
-
-saveData <- function(fileName, data) {
-  # Create a unique file name
-  fileName <- sprintf(fileName, as.integer(Sys.time()), digest::digest(data))
-  # Write the file to the local system
-  write.table(
-    x = data,
-    file = file.path(outputDir, fileName),
-#      sep = "\t",
-#     row.names = FALSE
-    )
-}
 
 loadData <- function() {
   # Read all the files into a list
@@ -49,34 +40,62 @@ loadData <- function() {
 
 server <- function(input, output, session) {
 
-  output$textOutput <- renderText({
-#      file <- input$inputFile
-#     print("Test")
-#     print("You entered: %s", input$inputFile)
-#     print(input)
-#     print(input$inputFile)
-#     print(file[1])
-#     print(file[2])
-#     saveData(file[1],file[2])
-  })
+  # output$textOutput <- renderText({
+  #    file <- input$inputFile
+  #   print("Test")
+  #   print("You entered: %s", input$inputFile)
+  #   print(input)
+  #   print(input$inputFile)
+  #   print(file[1])
+  #   print(file[2])
+  #   saveData(file[1],file[2])
+  # })
 
   observeEvent(input$actionBTN, {
     session
-    files <- input$inputFile
-    index <- 1
+    files <- list(input$inputFile)
+    print(files)
+    print(length(files))
+    # print(files[[1]][[1]])
+    
+    processDataSaving(
+      filesList = files,
+      outputDir = '010---raw-sources'
+    )
+    
+    # # map files list
+    # purrr::map(1:length(files), function(x) {
+    #         shiny.muiinput::saveData(
+    #            fileName  = files[[x]][[1]],
+    #            data      = files[[x]][[2]],
+    #            outputDir = 'data/010---raw-sources'
+    #          )
+    # })
+    
+    # index <- 1
     # using while loop
-    while (index <= length(files))
-    {
-        if(index %% 2 == 0){
-            saveData(files[index-1],files[index])
-        }
-        # statements
-        index = index + 1
-    }
+    # while (index <= length(files))
+    #   # print('While loop here')
+    # {
+    #     if(index %% 2 == 0) {
+    #        shiny.muiinput::saveData(
+    #          fileName  = files[[index]][[1]],
+    #          data      = files[[index]][[2]], 
+    #          outputDir = shiny.muiinput::RAW_DATA_PATH
+    #        )
+    #     }
+    #     # statements
+    #     index = index + 1
+    # }
 #     dataChanged <- paste(data,"cool")
 #     saveData(data)
 #     print(loadData())
   })
+  
+  # observeEvent(input$inputFile, {
+  #   print(input$inputFile)
+  # })
+  # 
 #
 #   observe({
 #     print(input$textArea)

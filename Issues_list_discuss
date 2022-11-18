@@ -1,0 +1,4 @@
+# 1. Zip file, js returns only the last one file; or returns nothing if 3 files.
+# 2. Add .txt extension to in the r code to create txt file.
+# 3. Clarify `if(index %% 2 == 0) {` logic
+# 4. while loop vs mapping

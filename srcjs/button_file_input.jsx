@@ -65,10 +65,12 @@ function UploadButton({configuration, value, setValue}) {
                 {/*<input hidden accept={configuration.filetype_accept} multiple type="file"*/}
                 {/*       onChange={fileSelectedHandler}/>*/}
                 <input
-                    type='file'
                     id='file'
+                    hidden
                     className='input-file'
                     accept={configuration.filetype_accept}
+                    multiple
+                    type="file"
                     onChange={e => {
                         let files = e.target.files;
                         for (let i = 0; i < files.length; i++) {

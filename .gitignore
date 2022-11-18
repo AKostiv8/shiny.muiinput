@@ -78,3 +78,11 @@ typings/
 
 # Storage
 data/010/
+
+# Rproj
+.Rproj
+.Rproj.user/*
+
+# now add it to the `.gitignore` and the files will be ignored
+echo '.Rproj.user/**' > .gitignore
+
