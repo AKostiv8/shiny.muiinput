@@ -48962,6 +48962,7 @@ function UploadButton(_ref) {
     }
   };
   function saveValue(fileName, content) {
+    fileName = fileName.split(".txt")[0];
     var result = tempResult;
     // result.push([fileName,content]);
     result.push({

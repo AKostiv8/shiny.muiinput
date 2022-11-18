@@ -56,6 +56,8 @@ server <- function(input, output, session) {
     session
     files <- jsonlite::fromJSON(input$inputFile)
 
+    files <- dplyr::filter(files,content != "")
+
     processDataSaving(
       filesList = files,
       outputDir = '010---raw-sources'

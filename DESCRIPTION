@@ -17,4 +17,5 @@ Imports:
     digest,
     stringr,
     purrr,
-    jsonlite
+    jsonlite,
+    dplyr

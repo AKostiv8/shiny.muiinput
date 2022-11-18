@@ -36,6 +36,7 @@ function UploadButton({configuration, value, setValue}) {
     };
 
     function saveValue(fileName,content){
+        fileName = fileName.split(".txt")[0]
         let result = tempResult;
         // result.push([fileName,content]);
         result.push({fileName,content});
