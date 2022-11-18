@@ -71,8 +71,6 @@ button_file_inputInput <- function(
 saveData <- function(fileName, data, outputDir, file_extension = '.txt') {
     # Create a unique file name 
     fileName <- sprintf(fileName, as.integer(Sys.time()), digest::digest(data))
-    # add txt extension
-    fileName <- paste0(fileName, file_extension)
     # Write files to the output directory
     writeLines(
       data, 
@@ -84,10 +82,10 @@ saveData <- function(fileName, data, outputDir, file_extension = '.txt') {
 processDataSaving <- function(filesList, outputDir) {
   # map files list
   if(dir.exists('data')) {
-    purrr::map(1:length(filesList), function(x) {
+    purrr::map(1:nrow(filesList), function(x) {
       shiny.muiinput::saveData(
-        fileName  = filesList[[x]][[1]],
-        data      = filesList[[x]][[2]],
+        fileName  = filesList$fileName[x],
+        data      = filesList$content[x],
         outputDir = paste0('data/', outputDir)
       )
     })

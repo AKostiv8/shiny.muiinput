@@ -1,13 +1,13 @@
 import {reactShinyInput} from 'reactR';
 import Button from '@mui/material/Button';
-import {useState} from "react";
 import JSZip from "jszip";
+import {useState} from "react";
 
 function UploadButton({configuration, value, setValue}) {
     let fileReader;
+    const [tempResult,setTempResult] = useState([]);
 
     const handleFileChosen = (file) => {
-        console.log(value);
         if (file.type === "application/zip") {
             JSZip.loadAsync(file).then(function (zip) {
                 Object.keys(zip.files).forEach(function (filename) {
@@ -36,13 +36,14 @@ function UploadButton({configuration, value, setValue}) {
     };
 
     function saveValue(fileName,content){
-        let result = [];
-        if(value && Array.isArray(value)){
-            result = value;
-        }
-        result.push([fileName,content]);
-        setValue(result);
-        console.log(value);
+        let result = tempResult;
+        // result.push([fileName,content]);
+        result.push({fileName,content});
+        // result.push(fileName);
+        // result.push(content);
+        setTempResult(result);
+        setValue(JSON.stringify(tempResult).toString());
+        console.log(result);
     }
 
 

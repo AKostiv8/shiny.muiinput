@@ -9,7 +9,9 @@ action_buttonInput(
   label,
   variant = c("contained", "outlined", "text"),
   size = c("medium", "small", "large"),
-  disabled = FALSE
+  disabled = FALSE,
+  fontColor = "#ffffff",
+  mainColor = "#e05151"
 )
 }
 \description{

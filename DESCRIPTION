@@ -16,4 +16,5 @@ Imports:
     shiny,
     digest,
     stringr,
-    purrr
+    purrr,
+    jsonlite

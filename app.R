@@ -54,11 +54,8 @@ server <- function(input, output, session) {
 
   observeEvent(input$actionBTN, {
     session
-    files <- list(input$inputFile)
-    print(files)
-    print(length(files))
-    # print(files[[1]][[1]])
-    
+    files <- jsonlite::fromJSON(input$inputFile)
+
     processDataSaving(
       filesList = files,
       outputDir = '010---raw-sources'

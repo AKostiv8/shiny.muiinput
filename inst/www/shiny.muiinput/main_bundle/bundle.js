@@ -48911,10 +48911,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactR__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reactR */ "reactR");
 /* harmony import */ var reactR__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(reactR__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/esm/Button/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var jszip__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jszip */ "./node_modules/jszip/dist/jszip.min.js");
-/* harmony import */ var jszip__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jszip__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var jszip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jszip */ "./node_modules/jszip/dist/jszip.min.js");
+/* harmony import */ var jszip__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jszip__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
@@ -48924,10 +48930,13 @@ function UploadButton(_ref) {
     value = _ref.value,
     setValue = _ref.setValue;
   var fileReader;
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    tempResult = _useState2[0],
+    setTempResult = _useState2[1];
   var handleFileChosen = function handleFileChosen(file) {
-    console.log(value);
     if (file.type === "application/zip") {
-      jszip__WEBPACK_IMPORTED_MODULE_3___default.a.loadAsync(file).then(function (zip) {
+      jszip__WEBPACK_IMPORTED_MODULE_2___default.a.loadAsync(file).then(function (zip) {
         Object.keys(zip.files).forEach(function (filename) {
           // let content = zip.files[filename];
           // console.log(file);
@@ -48953,13 +48962,17 @@ function UploadButton(_ref) {
     }
   };
   function saveValue(fileName, content) {
-    var result = [];
-    if (value && Array.isArray(value)) {
-      result = value;
-    }
-    result.push([fileName, content]);
-    setValue(result);
-    console.log(value);
+    var result = tempResult;
+    // result.push([fileName,content]);
+    result.push({
+      fileName: fileName,
+      content: content
+    });
+    // result.push(fileName);
+    // result.push(content);
+    setTempResult(result);
+    setValue(JSON.stringify(tempResult).toString());
+    console.log(result);
   }
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     variant: "contained",
@@ -49098,12 +49111,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _mui_material_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/material/TextField */ "./node_modules/@mui/material/esm/TextField/index.js");
 /* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/esm/styles/index.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+/* harmony import */ var use_debounce__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! use-debounce */ "./node_modules/use-debounce/dist/index.module.js");
+
 
 
 
@@ -49127,12 +49136,17 @@ var TextArea = function TextArea(_ref) {
       }
     }
   });
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
-    _useState2 = _slicedToArray(_useState, 2),
-    timer = _useState2[0],
-    setTimer = _useState2[1];
+
+  // Debounce callback
+  var debounced = Object(use_debounce__WEBPACK_IMPORTED_MODULE_4__["useDebouncedCallback"])(
+  // function
+  function (value) {
+    setValue(value);
+  },
+  // delay in ms
+  500);
   var handleOnChange = function handleOnChange(event) {
-    setValue(event.target.value);
+    debounced(event.target.value);
   };
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     var delayDebounceFn = setTimeout(function () {
@@ -49172,7 +49186,7 @@ function initTextArea() {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! regenerator-runtime/runtime.js */"./node_modules/regenerator-runtime/runtime.js");
-module.exports = __webpack_require__(/*! /Users/anastasiia/Documents/GitHub/shiny.muiinput/srcjs/main.jsx */"./srcjs/main.jsx");
+module.exports = __webpack_require__(/*! /Users/roman/shiny.muiinput/srcjs/main.jsx */"./srcjs/main.jsx");
 
 
 /***/ }),
