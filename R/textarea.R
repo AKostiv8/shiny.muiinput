@@ -9,7 +9,9 @@
 textareaInput <- function(
     inputId,
     label,
-    rowsInit
+    rowsInit,
+    fontColor = '#ffffff',
+    mainColor = '#e05151'
   ) {
   reactR::createReactShinyInput(
     inputId,
@@ -24,7 +26,9 @@ textareaInput <- function(
     default = NULL,
     configuration = list(
       label = label,
-      rowsInit = rowsInit
+      rowsInit = rowsInit,
+      fontColor = fontColor,
+      mainColor = mainColor
     ),
     htmltools::tags$div
   )

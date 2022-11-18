@@ -1,13 +1,42 @@
 import { reactShinyInput } from 'reactR';
 import React, { useState, useEffect } from 'react'
 import TextField from '@mui/material/TextField';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useDebouncedCallback } from 'use-debounce';
+
 
 const TextArea = ({ configuration, value, setValue }) => {
+  
+  const theme = createTheme({
+      status: {
+        danger: configuration.mainColor,
+      },
+      palette: {
+        primary: {
+          main: configuration.mainColor,
+          darker: configuration.mainColor,
+        },
+        neutral: {
+          main: configuration.mainColor,
+          contrastText: configuration.fontColor,
+        },
+      },
+  });
+  
+  // Debounce callback
+  const debounced = useDebouncedCallback(
+     // function
+     (value) => {
+        setValue(value);
+      },
+      // delay in ms
+      500
+  );
 
-  const [timer, setTimer] = useState(null)
+
 
   const handleOnChange = (event) => {
-    setValue(event.target.value);
+    debounced(event.target.value);
   };
 
 
@@ -21,15 +50,16 @@ const TextArea = ({ configuration, value, setValue }) => {
 
 
   return(
-    <div>
+    <ThemeProvider theme={theme}>
       <TextField
           id="outlined-multiline-static"
           label={configuration.label}
           multiline
           rows={configuration.rowsInit}
           onChange={handleOnChange}
+          inputProps={{ style: { color: configuration.fontColor} }}
       />
-      </div>
+    </ThemeProvider>
 
   )
 };

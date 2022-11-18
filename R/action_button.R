@@ -11,7 +11,9 @@ action_buttonInput <- function(
     label,
     variant = c('contained', 'outlined', 'text'),
     size = c("medium", "small", "large"),
-    disabled = FALSE
+    disabled = FALSE,
+    fontColor = '#ffffff',
+    mainColor = '#e05151'
   ) {
 
   variant <- match.arg(variant)
@@ -32,7 +34,9 @@ action_buttonInput <- function(
       label = label,
       variant = variant,
       disabled = disabled,
-      size = size
+      size = size,
+      fontColor = fontColor,
+      mainColor = mainColor
     ),
     htmltools::tags$div
   )

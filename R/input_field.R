@@ -1,4 +1,4 @@
-#' <File Input Button>
+#' <Add Title>
 #'
 #' <Add Description>
 #'
@@ -6,25 +6,32 @@
 #' @importFrom htmltools htmlDependency tags
 #'
 #' @export
-button_file_inputInput <- function(
-    inputId,
-    label,
-    filetype_accept
+input_fieldInput <- function(
+  inputId, 
+  label,
+  variant = c('outlined', 'filled', 'standard'),
+  fontColor = '#ffffff',
+  mainColor = '#e05151'
   ) {
+  
+  variant <- match.arg(variant)
+  
   reactR::createReactShinyInput(
     inputId,
-    "button_file_input",
+    "input_field",
     htmltools::htmlDependency(
-      name = "button_file_input-input",
+      name = "input_field-input",
       version = "1.0.0",
       src = "www/shiny.muiinput/main_bundle",
       package = "shiny.muiinput",
       script = "bundle.js"
     ),
     default = NULL,
-    configuration = list(
-      label = label,
-      filetype_accept = filetype_accept
+    list(
+      label     = label,
+      variant   = variant,
+      fontColor = fontColor,
+      mainColor = mainColor
     ),
     htmltools::tags$div
   )
@@ -35,7 +42,7 @@ button_file_inputInput <- function(
 #' <Add Description>
 #'
 #' @export
-updateButton_file_inputInput <- function(session, inputId, value, configuration = NULL) {
+updateInput_fieldInput <- function(session, inputId, value, configuration = NULL) {
   message <- list(value = value)
   if (!is.null(configuration)) message$configuration <- configuration
   session$sendInputMessage(inputId, message);

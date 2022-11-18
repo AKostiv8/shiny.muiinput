@@ -17,3 +17,4 @@ reactR::scaffoldReactShinyInput(
 # 2) devtools::document()
 # 3) devtools::load_all()
 
+# devtools::load_all(); shiny::runApp()

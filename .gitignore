@@ -69,9 +69,27 @@ typings/
 # vuepress build output
 .vuepress/dist
 
+#zip files
+*.zip
+# test data
+test/*
+data/*
+
 # Serverless directories
 .serverless
 
 # FuseBox cache
 .fusebox/
 .Rproj.user
+
+# Storage
+data/010/
+
+# Rproj
+.Rproj
+.Rproj.user/*
+
+# now add it to the `.gitignore` and the files will be ignored
+echo '.Rproj.user/**' > .gitignore
+
+node_modules
