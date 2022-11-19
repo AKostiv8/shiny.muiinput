@@ -42,7 +42,9 @@ button_file_inputInput <- function(
     inputId,
     label,
     filetype_accept,
-    outputDirPath
+    outputDirPath,
+    fontColor = '#ffffff',
+    mainColor = '#e05151'
   ) {
   # Call function to create output directory
   shiny.muiinput::check_create__outputDir(outputDirPath)
@@ -59,8 +61,10 @@ button_file_inputInput <- function(
     ),
     default = NULL,
     configuration = list(
-      label = label,
-      filetype_accept = filetype_accept
+      label           = label,
+      filetype_accept = filetype_accept,
+      fontColor       = fontColor,
+      mainColor       = mainColor
     ),
     htmltools::tags$div
   )
@@ -93,6 +97,18 @@ processDataSaving <- function(filesList, outputDir) {
     })
   } else {
     message('`data` directory doesnt exist!')
+    
+    dir.create('data')
+    dir.create(paste0('data/', outputDir))
+    
+    purrr::map(1:nrow(filesList), function(x) {
+      shiny.muiinput::saveData(
+        fileName  = filesList$fileName[x],
+        data      = filesList$content[x],
+        outputDir = paste0('data/', outputDir)
+      )
+    })
+    
   }
 
 }

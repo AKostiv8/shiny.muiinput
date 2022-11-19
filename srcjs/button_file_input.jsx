@@ -1,9 +1,27 @@
-import {reactShinyInput} from 'reactR';
+import { reactShinyInput } from 'reactR';
 import Button from '@mui/material/Button';
 import JSZip from "jszip";
-import {useState} from "react";
+import { useState } from "react";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function UploadButton({configuration, value, setValue}) {
+
+    const theme = createTheme({
+      status: {
+        danger: configuration.mainColor,
+      },
+      palette: {
+        primary: {
+          main: configuration.mainColor,
+          darker: configuration.mainColor,
+        },
+        neutral: {
+          main: configuration.mainColor,
+          contrastText: configuration.fontColor,
+        },
+      },
+    });
+
     let fileReader;
     const [tempResult,setTempResult] = useState([]);
 
@@ -50,6 +68,7 @@ function UploadButton({configuration, value, setValue}) {
 
     return (
         <>
+        <ThemeProvider theme={theme}>
             {/*{isList ?*/}
             {/*    <>*/}
             {/*        {*/}
@@ -81,6 +100,7 @@ function UploadButton({configuration, value, setValue}) {
                     }}
                 />
             </Button>
+        </ThemeProvider>
         </>
     )
 }

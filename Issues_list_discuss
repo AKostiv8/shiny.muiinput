@@ -2,3 +2,6 @@
 # 2. Add .txt extension to in the r code to create txt file.
 # 3. Clarify `if(index %% 2 == 0) {` logic
 # 4. while loop vs mapping
+
+### Sat
+# 1. You can add as many as you want files until you press submit button, after you pressed the existing files the dir should be deleted.

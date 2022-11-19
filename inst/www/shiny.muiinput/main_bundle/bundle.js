@@ -48915,6 +48915,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jszip__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jszip__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/esm/styles/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -48925,10 +48926,26 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function UploadButton(_ref) {
   var configuration = _ref.configuration,
     value = _ref.value,
     setValue = _ref.setValue;
+  var theme = Object(_mui_material_styles__WEBPACK_IMPORTED_MODULE_4__["createTheme"])({
+    status: {
+      danger: configuration.mainColor
+    },
+    palette: {
+      primary: {
+        main: configuration.mainColor,
+        darker: configuration.mainColor
+      },
+      neutral: {
+        main: configuration.mainColor,
+        contrastText: configuration.fontColor
+      }
+    }
+  });
   var fileReader;
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])([]),
     _useState2 = _slicedToArray(_useState, 2),
@@ -48975,7 +48992,9 @@ function UploadButton(_ref) {
     setValue(JSON.stringify(tempResult).toString());
     console.log(result);
   }
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_mui_material_styles__WEBPACK_IMPORTED_MODULE_4__["ThemeProvider"], {
+    theme: theme
+  }, /*#__PURE__*/React.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     variant: "contained",
     component: "label"
   }, configuration.label, /*#__PURE__*/React.createElement("input", {
@@ -48991,7 +49010,7 @@ function UploadButton(_ref) {
         handleFileChosen(files[i]);
       }
     }
-  })));
+  }))));
 }
 function initUploadButton() {
   return Object(reactR__WEBPACK_IMPORTED_MODULE_0__["reactShinyInput"])('.button_file_input', 'shiny.muiinput.button_file_input', UploadButton);
@@ -49187,7 +49206,7 @@ function initTextArea() {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! regenerator-runtime/runtime.js */"./node_modules/regenerator-runtime/runtime.js");
-module.exports = __webpack_require__(/*! /Users/roman/shiny.muiinput/srcjs/main.jsx */"./srcjs/main.jsx");
+module.exports = __webpack_require__(/*! /Users/anastasiia/Documents/GitHub/shiny.muiinput/srcjs/main.jsx */"./srcjs/main.jsx");
 
 
 /***/ }),
