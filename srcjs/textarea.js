@@ -58,6 +58,7 @@ const TextArea = ({ configuration, value, setValue }) => {
           rows={configuration.rowsInit}
           onChange={handleOnChange}
           inputProps={{ style: { color: configuration.fontColor} }}
+          focused
       />
     </ThemeProvider>
 

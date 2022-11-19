@@ -50,7 +50,7 @@ const TextInput = ({ configuration, value, setValue }) => {
             onChange={handleOnChange} 
             color="neutral"
             inputProps={{ style: { color: configuration.fontColor} }}
-
+            focused
         />
       </ThemeProvider>
      );

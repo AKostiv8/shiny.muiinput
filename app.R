@@ -11,6 +11,7 @@ ui <- div(
   action_buttonInput(inputId = 'actionBTN', label = 'Submit'),
   textareaInput('textArea', 'Enter plain text', 10),
   input_fieldInput('textInput', 'Text field'),
+  icon_buttonInput('iconbtn'),
   textOutput("textOutput")
 )
 
@@ -52,6 +53,10 @@ server <- function(input, output, session) {
   #   saveData(file[1],file[2])
   # })
 
+  observeEvent(input$iconbtn, {
+    print(input$iconbtn)
+  })
+  
   observeEvent(input$actionBTN, {
     session
     files <- jsonlite::fromJSON(input$inputFile)
@@ -92,11 +97,10 @@ server <- function(input, output, session) {
 #     print(loadData())
   })
   
-  observeEvent(input$textInput, {
-    print(input$textInput)
+  observeEvent(input$actionBTN, {
+    print(input$actionBTN)
   })
 
-#
 #   observe({
 #     print(input$textArea)
 #     print("Hello")
