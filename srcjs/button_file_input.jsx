@@ -54,15 +54,10 @@ function UploadButton({configuration, value, setValue}) {
     };
 
     function saveValue(fileName,content){
-        fileName = fileName.split(".txt")[0]
         let result = tempResult;
-        // result.push([fileName,content]);
         result.push({fileName,content});
-        // result.push(fileName);
-        // result.push(content);
         setTempResult(result);
         setValue(JSON.stringify(tempResult).toString());
-        console.log(result);
     }
 
 
