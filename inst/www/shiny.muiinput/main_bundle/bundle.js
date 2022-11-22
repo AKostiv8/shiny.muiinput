@@ -50971,7 +50971,6 @@ function UploadButton(_ref) {
     }
   };
   function saveValue(fileName, content) {
-    fileName = fileName.split(".txt")[0];
     var result = tempResult;
     // result.push([fileName,content]);
     result.push({
@@ -50982,7 +50981,6 @@ function UploadButton(_ref) {
     // result.push(content);
     setTempResult(result);
     setValue(JSON.stringify(tempResult).toString());
-    console.log(result);
   }
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_mui_material_styles__WEBPACK_IMPORTED_MODULE_4__["ThemeProvider"], {
     theme: theme
@@ -51506,7 +51504,7 @@ function initTextArea() {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! regenerator-runtime/runtime.js */"./node_modules/regenerator-runtime/runtime.js");
-module.exports = __webpack_require__(/*! /Users/anastasiia/Documents/GitHub/shiny.muiinput/srcjs/main.jsx */"./srcjs/main.jsx");
+module.exports = __webpack_require__(/*! /Users/roman/shiny.muiinput/srcjs/main.jsx */"./srcjs/main.jsx");
 
 
 /***/ }),

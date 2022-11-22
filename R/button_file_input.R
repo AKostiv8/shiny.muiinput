@@ -75,8 +75,8 @@ button_file_inputInput <- function(
 saveData <- function(fileName, data, outputDir, file_extension = '.txt') {
     # Create a unique file name 
     fileName <- sprintf(fileName, as.integer(Sys.time()), digest::digest(data))
-    # add txt extension
-    fileName <- paste0(fileName, file_extension)
+#     add txt extension
+#     fileName <- paste0(fileName, file_extension)
     # Write files to the output directory
     writeLines(
       data, 
