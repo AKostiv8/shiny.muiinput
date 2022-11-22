@@ -50972,13 +50972,10 @@ function UploadButton(_ref) {
   };
   function saveValue(fileName, content) {
     var result = tempResult;
-    // result.push([fileName,content]);
     result.push({
       fileName: fileName,
       content: content
     });
-    // result.push(fileName);
-    // result.push(content);
     setTempResult(result);
     setValue(JSON.stringify(tempResult).toString());
   }
@@ -51504,7 +51501,7 @@ function initTextArea() {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! regenerator-runtime/runtime.js */"./node_modules/regenerator-runtime/runtime.js");
-module.exports = __webpack_require__(/*! /Users/roman/shiny.muiinput/srcjs/main.jsx */"./srcjs/main.jsx");
+module.exports = __webpack_require__(/*! /Users/anastasiia/Documents/GitHub/shiny.muiinput/srcjs/main.jsx */"./srcjs/main.jsx");
 
 
 /***/ }),
