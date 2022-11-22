@@ -2,7 +2,7 @@
 
 ```
 reactR::scaffoldReactShinyInput(
-    "icon_button", 
+    "select_field", 
     list(
         "@mui/material" = "^5.10.12"
     )
