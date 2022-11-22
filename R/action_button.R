@@ -47,8 +47,11 @@ action_buttonInput <- function(
 #' <Add Description>
 #'
 #' @export
-updateAction_buttonInput <- function(session, inputId, value, configuration = NULL) {
-  message <- list(value = value)
+updateAction_buttonInput <- function(session, inputId, 
+                                     # value, 
+                                     configuration = NULL) {
+  # message <- list(value = value)
+  message <- list()
   if (!is.null(configuration)) message$configuration <- configuration
   session$sendInputMessage(inputId, message);
 }
