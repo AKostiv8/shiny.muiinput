@@ -18,7 +18,7 @@ const TextArea = ({ configuration, value, setValue }) => {
         },
         neutral: {
           main: configuration.mainColor,
-          contrastText: configuration.fontColor,
+          contrastText: configuration.secondaryColor,
         },
       },
   });
@@ -57,8 +57,27 @@ const TextArea = ({ configuration, value, setValue }) => {
           multiline
           rows={configuration.rowsInit}
           onChange={handleOnChange}
-          inputProps={{ style: { color: configuration.fontColor} }}
-          focused
+          inputProps={{ style: { color: configuration.secondaryColor} }}
+          sx={[{'&:hover': {
+                    "&& fieldset": {
+                        border: `2px solid ${configuration.secondaryColor}`
+                      },
+                     "label": {
+                        color: configuration.secondaryColor
+                     }
+                    }
+                },
+                {"& label": {
+                    color: configuration.secondaryColor
+                  }
+                },
+                { color: configuration.secondaryColor },
+                {"&& fieldset": {
+                    border: `1px solid ${configuration.secondaryColor}`,
+                    color: configuration.secondaryColor
+                  }
+                }
+          ]}
       />
     </ThemeProvider>
 

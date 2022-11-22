@@ -6,29 +6,31 @@
 #' @importFrom htmltools htmlDependency tags
 #'
 #' @export
-textareaInput <- function(
-    inputId,
-    label,
-    rowsInit,
-    secondaryColor = '#ffffff',
-    mainColor = '#e05151'
+select_fieldInput <- function(
+  inputId,
+  label,
+  value = NULL,
+  disabled = FALSE,
+  secondaryColor = '#ffffff',
+  mainColor = '#e05151'
   ) {
   reactR::createReactShinyInput(
     inputId,
-    "textarea",
+    "select_field",
     htmltools::htmlDependency(
-      name = "textarea-input",
+      name = "select_field-input",
       version = "1.0.0",
       src = "www/shiny.muiinput/main_bundle",
       package = "shiny.muiinput",
       script = "bundle.js"
     ),
     default = NULL,
-    configuration = list(
+    list(
       label = label,
-      rowsInit = rowsInit,
+      value = value,
       secondaryColor = secondaryColor,
-      mainColor = mainColor
+      mainColor = mainColor,
+      disabled = disabled
     ),
     htmltools::tags$div
   )
@@ -39,8 +41,11 @@ textareaInput <- function(
 #' <Add Description>
 #'
 #' @export
-updateTextareaInput <- function(session, inputId, value, configuration = NULL) {
-  message <- list(value = value)
+updateSelect_fieldInput <- function(session, inputId, 
+                                    # value, 
+                                    configuration = NULL) {
+  # message <- list(value = value)
+  message <- list()
   if (!is.null(configuration)) message$configuration <- configuration
   session$sendInputMessage(inputId, message);
 }

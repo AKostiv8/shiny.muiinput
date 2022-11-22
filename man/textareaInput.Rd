@@ -8,7 +8,7 @@ textareaInput(
   inputId,
   label,
   rowsInit,
-  fontColor = "#ffffff",
+  secondaryColor = "#ffffff",
   mainColor = "#e05151"
 )
 }

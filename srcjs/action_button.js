@@ -27,6 +27,12 @@ const ActionButton = ({ configuration, value, setValue }) => {
         size={configuration.size}
         disabled={configuration.disabled}
         onClick={() => setValue(value + 1)}
+        sx = {{
+              ":disabled": {
+                backgroundColor: '#ffffff1f',
+                color: '#f5f5f542'
+              }
+        }}
       >
         {configuration.label}
       </Button>

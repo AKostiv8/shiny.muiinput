@@ -1,6 +1,8 @@
 library(shiny)
 library(shiny.muiinput)
 
+sources_vector <- dir(path = '../shiny-rock/examples/data/')
+
 ui <- div(
   # titlePanel("reactR Input Example"),
   button_file_inputInput(inputId = 'inputFile',
@@ -12,7 +14,11 @@ ui <- div(
   textareaInput('textArea', 'Enter plain text', 10),
   input_fieldInput('textInput', 'Text field'),
   icon_buttonInput('iconbtn'),
-  textOutput("textOutput")
+  icon_buttonInput('iconbtn2'),
+  textOutput("textOutput"),
+  select_fieldInput('select_field', label = 'Directory', value = sources_vector),
+  source_uploadInput('codeId', label = 'Code', startIcon=TRUE),
+  source_uploadInput('sectionId', label = 'Section', endIcon=TRUE)
 )
 
 
@@ -53,8 +59,11 @@ server <- function(input, output, session) {
   #   saveData(file[1],file[2])
   # })
 
-  observeEvent(input$iconbtn, {
-    print(input$iconbtn)
+  observeEvent(input$codeId, {
+    print(input$codeId)
+  })
+  observeEvent(input$sectionId, {
+    print(input$sectionId)
   })
   
   observeEvent(input$actionBTN, {
@@ -97,8 +106,35 @@ server <- function(input, output, session) {
 #     print(loadData())
   })
   
-  observeEvent(input$actionBTN, {
-    print(input$actionBTN)
+  observeEvent(input$select_field, {
+    print(input$select_field)
+  })
+  
+  
+  observeEvent(input$iconbtn, {
+    updateSelect_fieldInput(session = getDefaultReactiveDomain(), 
+                            inputId = 'select_field', 
+                            # value = c('one', 'two', 'tjree'),
+                            configuration = list(
+                              label = 'Test',
+                              value = NULL,
+                              secondaryColor = '#ffffff',
+                              mainColor = '#e05151'
+                            )
+                            )
+  })
+  
+  observeEvent(input$iconbtn2, {
+    updateSelect_fieldInput(session = getDefaultReactiveDomain(), 
+                            inputId = 'select_field', 
+                            # value = c('one', 'two', 'tjree'),
+                            configuration = list(
+                              label = 'Test2',
+                              value = sources_vector,
+                              secondaryColor = '#ffffff',
+                              mainColor = '#e05151'
+                            )
+    )
   })
 
 #   observe({

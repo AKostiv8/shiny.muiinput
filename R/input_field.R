@@ -9,9 +9,9 @@
 input_fieldInput <- function(
   inputId, 
   label,
-  variant = c('outlined', 'filled', 'standard'),
-  fontColor = '#ffffff',
-  mainColor = '#e05151'
+  variant        = c('outlined', 'filled', 'standard'),
+  secondaryColor = '#ffffff',
+  mainColor      = '#e05151'
   ) {
   
   variant <- match.arg(variant)
@@ -28,10 +28,10 @@ input_fieldInput <- function(
     ),
     default = NULL,
     list(
-      label     = label,
-      variant   = variant,
-      fontColor = fontColor,
-      mainColor = mainColor
+      label          = label,
+      variant        = variant,
+      secondaryColor = secondaryColor,
+      mainColor      = mainColor
     ),
     htmltools::tags$div
   )

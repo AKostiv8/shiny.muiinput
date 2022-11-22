@@ -5,3 +5,5 @@
 
 ### Sat
 # 1. You can add as many as you want files until you press submit button, after you pressed the existing files the dir should be deleted.
+
+configuration.values.map(item => <MenuItem value={item}>{item}</MenuItem>)
