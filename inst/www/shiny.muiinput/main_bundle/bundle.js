@@ -51283,6 +51283,9 @@ var SelectInputField = function SelectInputField(_ref) {
     }, {}]
   }, !(configuration.value === null) ? configuration.value.map(function (item) {
     return /*#__PURE__*/React.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      sx: {
+        color: 'grey'
+      },
       value: item
     }, item);
   }) : null))));
