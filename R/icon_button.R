@@ -9,7 +9,8 @@
 icon_buttonInput <- function(
   inputId, 
   fontColor = '#ffffff',
-  mainColor = '#ffffff'
+  mainColor = '#ffffff',
+  disabled  = FALSE
   ) {
   reactR::createReactShinyInput(
     inputId,
@@ -24,7 +25,8 @@ icon_buttonInput <- function(
     default = NULL,
     list(
       fontColor = fontColor,
-      mainColor = mainColor
+      mainColor = mainColor,
+      disabled  = disabled
     ),
     htmltools::tags$div
   )
@@ -35,8 +37,12 @@ icon_buttonInput <- function(
 #' <Add Description>
 #'
 #' @export
-updateIcon_buttonInput <- function(session, inputId, value, configuration = NULL) {
-  message <- list(value = value)
+updateIcon_buttonInput <- function(session, inputId, 
+                                   # value, 
+                                   configuration = NULL) {
+  # message <- list(value = value)
+  message <- list()
+  
   if (!is.null(configuration)) message$configuration <- configuration
   session$sendInputMessage(inputId, message);
 }

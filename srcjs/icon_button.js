@@ -26,8 +26,9 @@ const IconInput = ({ configuration, value, setValue }) => {
       <ThemeProvider theme={theme}>
           <IconButton 
             aria-label="sendicon"
-            sx={{ color: configuration.mainColor }}
+            sx={configuration.disabled ? {'&.Mui-disabled': {color: '#f5f5f542'}} : { color: configuration.mainColor }}
             onClick={() => setValue(value + 1)}
+            disabled={configuration.disabled}
           >
             <SendIcon />
           </IconButton>

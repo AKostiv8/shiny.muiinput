@@ -4,7 +4,7 @@
 \alias{updateIcon_buttonInput}
 \title{<Add Title>}
 \usage{
-updateIcon_buttonInput(session, inputId, value, configuration = NULL)
+updateIcon_buttonInput(session, inputId, configuration = NULL)
 }
 \description{
 <Add Description>

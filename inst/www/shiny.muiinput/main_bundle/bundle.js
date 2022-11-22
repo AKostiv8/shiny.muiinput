@@ -51048,12 +51048,17 @@ var IconInput = function IconInput(_ref) {
     theme: theme
   }, /*#__PURE__*/React.createElement(_mui_material_IconButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
     "aria-label": "sendicon",
-    sx: {
+    sx: configuration.disabled ? {
+      '&.Mui-disabled': {
+        color: '#f5f5f542'
+      }
+    } : {
       color: configuration.mainColor
     },
     onClick: function onClick() {
       return setValue(value + 1);
-    }
+    },
+    disabled: configuration.disabled
   }, /*#__PURE__*/React.createElement(_mui_icons_material_Send__WEBPACK_IMPORTED_MODULE_2___default.a, null)));
 };
 function initIconButton() {

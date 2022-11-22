@@ -4,7 +4,12 @@
 \alias{icon_buttonInput}
 \title{<Add Title>}
 \usage{
-icon_buttonInput(inputId, fontColor = "#ffffff", mainColor = "#ffffff")
+icon_buttonInput(
+  inputId,
+  fontColor = "#ffffff",
+  mainColor = "#ffffff",
+  disabled = FALSE
+)
 }
 \description{
 <Add Description>
