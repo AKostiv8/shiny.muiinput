@@ -14,7 +14,7 @@ ui <- div(
   textareaInput('textArea', 'Enter plain text', 10),
   input_fieldInput('textInput', 'Text field'),
   icon_buttonInput('iconbtn'),
-  icon_buttonInput('iconbtn2'),
+  icon_buttonInput('iconbtn2', disabled = TRUE),
   textOutput("textOutput"),
   select_fieldInput('select_field', label = 'Directory', value = sources_vector),
   source_uploadInput('codeId', label = 'Code', startIcon=TRUE),
