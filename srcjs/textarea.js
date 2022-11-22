@@ -27,7 +27,11 @@ const TextArea = ({ configuration, value, setValue }) => {
   const debounced = useDebouncedCallback(
      // function
      (value) => {
-        setValue(value);
+          if(!value) {
+            setValue(null);
+          } else {
+            setValue(value);
+          }
       },
       // delay in ms
       500
@@ -42,7 +46,7 @@ const TextArea = ({ configuration, value, setValue }) => {
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
-      console.log(value)
+      // console.log(value)
       // Send Axios request here
     }, 5000)
     return () => clearTimeout(delayDebounceFn)

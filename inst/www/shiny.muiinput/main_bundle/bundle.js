@@ -51108,7 +51108,11 @@ var TextInput = function TextInput(_ref) {
   var debounced = Object(use_debounce__WEBPACK_IMPORTED_MODULE_4__["useDebouncedCallback"])(
   // function
   function (value) {
-    setValue(value);
+    if (!value) {
+      setValue(null);
+    } else {
+      setValue(value);
+    }
   },
   // delay in ms
   500);
@@ -51435,7 +51439,11 @@ var TextArea = function TextArea(_ref) {
   var debounced = Object(use_debounce__WEBPACK_IMPORTED_MODULE_4__["useDebouncedCallback"])(
   // function
   function (value) {
-    setValue(value);
+    if (!value) {
+      setValue(null);
+    } else {
+      setValue(value);
+    }
   },
   // delay in ms
   500);
@@ -51444,7 +51452,7 @@ var TextArea = function TextArea(_ref) {
   };
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     var delayDebounceFn = setTimeout(function () {
-      console.log(value);
+      // console.log(value)
       // Send Axios request here
     }, 5000);
     return function () {

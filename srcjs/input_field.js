@@ -28,7 +28,11 @@ const TextInput = ({ configuration, value, setValue }) => {
       const debounced = useDebouncedCallback(
         // function
         (value) => {
-          setValue(value);
+          if(!value) {
+            setValue(null);
+          } else {
+            setValue(value);
+          }
         },
         // delay in ms
         500

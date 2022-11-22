@@ -59,12 +59,12 @@ server <- function(input, output, session) {
   #   saveData(file[1],file[2])
   # })
 
-  observeEvent(input$codeId, {
-    print(input$codeId)
+  observeEvent(input$textArea, {
+    print(input$textArea)
   })
-  observeEvent(input$sectionId, {
-    print(input$sectionId)
-  })
+  observeEvent(input$textInput, {
+    print(input$textInput)
+  }, ignoreNULL = FALSE)
   
   observeEvent(input$actionBTN, {
     session
