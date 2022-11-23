@@ -1,5 +1,6 @@
 library(shiny)
 library(shiny.muiinput)
+library(shiny.muicalendar)
 
 sources_vector <- as.list(dir(path = '../shiny-rock/examples/data/'))
 
@@ -20,7 +21,8 @@ ui <- div(
   select_fieldInput('select_field_2', label = 'Directory', NULL),
   select_fieldInput('select_field_3', label = 'Directory', value = c('t', 'j')),
   source_uploadInput('codeId', label = 'Code', startIcon=TRUE),
-  source_uploadInput('sectionId', label = 'Section', endIcon=TRUE)
+  source_uploadInput('sectionId', label = 'Section', endIcon=TRUE),
+  checkbox_fieldInput('checkBoxTest', label = 'Test', default = FALSE)
 )
 
 
@@ -32,6 +34,7 @@ loadData <- function() {
   data <- do.call(rbind, data)
   data
 }
+
 
 # saveData <- function(data) {
 #   data <- as.data.frame(t(data))
@@ -60,12 +63,15 @@ server <- function(input, output, session) {
   #   print(file[2])
   #   saveData(file[1],file[2])
   # })
-
-  observeEvent(input$textArea, {
-    print(input$textArea)
+  observeEvent(input$checkBoxTest, {
+    print(input$checkBoxTest)
   })
+
+  # observeEvent(input$textArea, {
+  #   print(input$textArea)
+  # })
   observeEvent(input$textInput, {
-    print(input$textInput)
+    # print(input$textInput)
   }, ignoreNULL = FALSE)
   
   observeEvent(input$actionBTN, {

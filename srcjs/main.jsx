@@ -5,6 +5,7 @@ import initTextInput from './input_field.js';
 import initIconButton from './icon_button.js';
 import initSelect from './select_field.js';
 import initSourceUploadButton from './source_upload.jsx';
+import initCheckbox from './checkbox_field.js';
 
 
 initUploadButton();
@@ -14,3 +15,4 @@ initTextInput();
 initIconButton();
 initSelect();
 initSourceUploadButton();
+initCheckbox();
