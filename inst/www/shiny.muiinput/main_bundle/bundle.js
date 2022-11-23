@@ -51286,12 +51286,7 @@ var SelectInputField = function SelectInputField(_ref) {
         color: configuration.secondaryColor
       }
     }, {}]
-  }, !(configuration.value === null) ? configuration.value.length === 1 ? /*#__PURE__*/React.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    sx: {
-      color: 'grey'
-    },
-    value: configuration.value
-  }, configuration.value) : configuration.value.map(function (item) {
+  }, !(configuration.value === null) ? configuration.value.map(function (item) {
     return /*#__PURE__*/React.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sx: {
         color: 'grey'

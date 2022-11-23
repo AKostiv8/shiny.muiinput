@@ -70,12 +70,10 @@ const SelectInputField = ({ configuration, value, setValue }) => {
                     }
                  ]}
             >
-
               {!(configuration.value === null)
-                ? configuration.value.length === 1 ? <MenuItem sx={{ color: 'grey' }} value={configuration.value}>{configuration.value}</MenuItem> : configuration.value.map(item => <MenuItem sx={{ color: 'grey' }} value={item}>{item}</MenuItem>)
+                ? configuration.value.map(item => <MenuItem sx={{ color: 'grey' }} value={item}>{item}</MenuItem>)
                 : null
               }
-              
             </Select>
           </FormControl>
         </Box>

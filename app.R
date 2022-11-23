@@ -1,7 +1,7 @@
 library(shiny)
 library(shiny.muiinput)
 
-sources_vector <- dir(path = '../shiny-rock/examples/data/')
+sources_vector <- as.list(dir(path = '../shiny-rock/examples/data/'))
 
 ui <- div(
   # titlePanel("reactR Input Example"),
