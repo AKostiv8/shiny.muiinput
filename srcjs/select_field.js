@@ -70,7 +70,7 @@ const SelectInputField = ({ configuration, value, setValue }) => {
                     }
                  ]}
             >
-            {console.log(configuration.value.length)}
+
               {!(configuration.value === null)
                 ? configuration.value.length === 1 ? <MenuItem sx={{ color: 'grey' }} value={configuration.value}>{configuration.value}</MenuItem> : configuration.value.map(item => <MenuItem sx={{ color: 'grey' }} value={item}>{item}</MenuItem>)
                 : null

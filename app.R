@@ -17,7 +17,7 @@ ui <- div(
   icon_buttonInput('iconbtn2', disabled = TRUE),
   textOutput("textOutput"),
   select_fieldInput('select_field', label = 'Directory', value = sources_vector),
-  select_fieldInput('select_field_2', label = 'Directory', value = c('h')),
+  select_fieldInput('select_field_2', label = 'Directory', NULL),
   select_fieldInput('select_field_3', label = 'Directory', value = c('t', 'j')),
   source_uploadInput('codeId', label = 'Code', startIcon=TRUE),
   source_uploadInput('sectionId', label = 'Section', endIcon=TRUE)
