@@ -1,6 +1,5 @@
 library(shiny)
 library(shiny.muiinput)
-library(shiny.muicalendar)
 
 sources_vector <- as.list(dir(path = '../shiny-rock/examples/data/'))
 
@@ -144,6 +143,15 @@ server <- function(input, output, session) {
                             )
     )
   })
+
+    observeEvent(input$codeId, {
+      print(input$codeId)
+    })
+
+     observe({
+            print(input$codeId)
+            print("Hello")
+        })
 
 #   observe({
 #     print(input$textArea)

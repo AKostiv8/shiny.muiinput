@@ -52611,23 +52611,10 @@ var SourceUploadButton = function SourceUploadButton(_ref) {
     fileReader = new FileReader();
     fileReader.onloadend = function (event) {
       var content = event.target.result;
-      saveValue(file.name, content);
+      setValue(content);
     };
     fileReader.readAsText(file);
   };
-  function saveValue(fileName, content) {
-    fileName = fileName.split(".txt")[0];
-    var result = tempResult;
-    // result.push([fileName,content]);
-    result.push({
-      content: content
-    });
-    // result.push(fileName);
-    // result.push(content);
-    setTempResult(result);
-    setValue(JSON.stringify(tempResult).toString());
-    console.log(result);
-  }
   return /*#__PURE__*/React.createElement(_mui_material_styles__WEBPACK_IMPORTED_MODULE_5__["ThemeProvider"], {
     theme: theme
   }, /*#__PURE__*/React.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -52641,7 +52628,7 @@ var SourceUploadButton = function SourceUploadButton(_ref) {
     accept: configuration.filetype_accept,
     type: "file",
     onChange: function onChange(e) {
-      return handleFileChosen(e.target.file);
+      return handleFileChosen(e.target.files[0]);
     }
   })));
 };
@@ -52767,7 +52754,7 @@ function initTextArea() {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! regenerator-runtime/runtime.js */"./node_modules/regenerator-runtime/runtime.js");
-module.exports = __webpack_require__(/*! /Users/anastasiia/Documents/GitHub/shiny.muiinput/srcjs/main.jsx */"./srcjs/main.jsx");
+module.exports = __webpack_require__(/*! /Users/roman/shiny.muiinput/srcjs/main.jsx */"./srcjs/main.jsx");
 
 
 /***/ }),
