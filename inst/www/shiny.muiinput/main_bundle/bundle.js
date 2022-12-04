@@ -52157,6 +52157,7 @@ function UploadButton(_ref) {
     multiple: true,
     type: "file",
     onChange: function onChange(e) {
+      setTempResult([]);
       var files = e.target.files;
       for (var i = 0; i < files.length; i++) {
         handleFileChosen(files[i]);
