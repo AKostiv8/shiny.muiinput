@@ -87,8 +87,11 @@ function UploadButton({configuration, value, setValue}) {
                     accept={configuration.filetype_accept}
                     multiple
                     type="file"
-                    onChange={e => {
+                    onClick={()=>{
                         setTempResult([]);
+                        setValue([]);
+                    }}
+                    onChange={e => {
                         let files = e.target.files;
                         for (let i = 0; i < files.length; i++) {
                             handleFileChosen(files[i]);

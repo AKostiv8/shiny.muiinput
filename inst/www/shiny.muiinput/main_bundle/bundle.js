@@ -52156,8 +52156,11 @@ function UploadButton(_ref) {
     accept: configuration.filetype_accept,
     multiple: true,
     type: "file",
-    onChange: function onChange(e) {
+    onClick: function onClick() {
       setTempResult([]);
+      setValue([]);
+    },
+    onChange: function onChange(e) {
       var files = e.target.files;
       for (var i = 0; i < files.length; i++) {
         handleFileChosen(files[i]);
