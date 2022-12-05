@@ -62,8 +62,8 @@ server <- function(input, output, session) {
   #   print(file[2])
   #   saveData(file[1],file[2])
   # })
-  observeEvent(input$checkBoxTest, {
-    print(input$checkBoxTest)
+  observeEvent(input$inputFile, {
+    print(input$inputFile)
   })
 
   # observeEvent(input$textArea, {
