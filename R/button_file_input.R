@@ -10,7 +10,7 @@
 RAW_DATA_PATH <- NULL
 # Create raw files output directory
 #' @export
-check_create__outputDir <- function(path) {
+check_create__outputDir <- function(path, temp_dir) {
   
   # call parent env to rewrite `RAW_DATA_PATH` variable
   env <- parent.frame()
@@ -20,17 +20,17 @@ check_create__outputDir <- function(path) {
   
   path <- stringr::str_remove_all(path, pattern = '/')
   # If folder `data` doesn't exist
-  if(!dir.exists('data')) {
+  if(!dir.exists(paste0(temp_dir, '/data'))) {
     dir.create('data')
-    dir.create(as.character(stringr::str_glue('data/{path}')))
-    env$RAW_DATA_PATH <- as.character(stringr::str_glue('data/{path}'))
+    dir.create(as.character(stringr::str_glue('{temp_dir}/data/{path}')))
+    env$RAW_DATA_PATH <- as.character(stringr::str_glue('{temp_dir}/data/{path}'))
   }
   
   # If folder `data` exists
-  if(dir.exists('data')) {
-    if(!dir.exists(as.character(stringr::str_glue('data/{path}')))) {
-      dir.create(as.character(stringr::str_glue('data/{path}')))
-      env$RAW_DATA_PATH <- as.character(stringr::str_glue('data/{path}'))
+  if(dir.exists(paste0(temp_dir,'/data'))) {
+    if(!dir.exists(as.character(stringr::str_glue('{temp_dir}/data/{path}')))) {
+      dir.create(as.character(stringr::str_glue('{temp_dir}/data/{path}')))
+      env$RAW_DATA_PATH <- as.character(stringr::str_glue('{temp_dir}/data/{path}'))
     }
   }
   
@@ -47,7 +47,7 @@ button_file_inputInput <- function(
     mainColor = '#e05151'
   ) {
   # Call function to create output directory
-  shiny.muiinput::check_create__outputDir(outputDirPath)
+  shiny.muiinput::check_create__outputDir(outputDirPath, temp_dir)
   
   reactR::createReactShinyInput(
     inputId,
@@ -85,27 +85,27 @@ saveData <- function(fileName, data, outputDir, file_extension = '.txt') {
 }
 
 #' @export
-processDataSaving <- function(filesList, outputDir) {
+processDataSaving <- function(filesList, outputDir, temp_dir) {
   # map files list
-  if(dir.exists('data')) {
+  if(dir.exists(paste0(temp_dir, '/data'))) {
     purrr::map(1:nrow(filesList), function(x) {
         shiny.muiinput::saveData(
             fileName  = filesList$fileName[x],
             data      = filesList$content[x],
-            outputDir = paste0('data/', outputDir)
+            outputDir = paste0(temp_dir, '/data/', outputDir)
         )
     })
   } else {
     message('`data` directory doesnt exist!')
     
-    dir.create('data')
-    dir.create(paste0('data/', outputDir))
+    dir.create(paste0(temp_dir, '/data'))
+    dir.create(paste0(temp_dir, '/data/', outputDir))
     
     purrr::map(1:nrow(filesList), function(x) {
       shiny.muiinput::saveData(
         fileName  = filesList$fileName[x],
         data      = filesList$content[x],
-        outputDir = paste0('data/', outputDir)
+        outputDir = paste0(temp_dir, '/data/', outputDir)
       )
     })
     
