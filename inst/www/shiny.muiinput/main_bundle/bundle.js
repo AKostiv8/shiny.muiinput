@@ -52364,14 +52364,14 @@ var TextInput = function TextInput(_ref) {
   var debounced = Object(use_debounce__WEBPACK_IMPORTED_MODULE_4__["useDebouncedCallback"])(
   // function
   function (value) {
-    if (!value) {
+    if (!value || value === '') {
       setValue(null);
     } else {
       setValue(value);
     }
   },
   // delay in ms
-  500);
+  50);
   var handleOnChange = function handleOnChange(event) {
     debounced(event.target.value);
   };
@@ -52380,6 +52380,7 @@ var TextInput = function TextInput(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: configuration.label,
     variant: configuration.variant,
+    value: value === null ? '' : value,
     onChange: handleOnChange,
     color: "neutral",
     inputProps: {
@@ -52688,14 +52689,14 @@ var TextArea = function TextArea(_ref) {
   var debounced = Object(use_debounce__WEBPACK_IMPORTED_MODULE_4__["useDebouncedCallback"])(
   // function
   function (value) {
-    if (!value) {
+    if (!value || value === '') {
       setValue(null);
     } else {
       setValue(value);
     }
   },
   // delay in ms
-  500);
+  50);
   var handleOnChange = function handleOnChange(event) {
     debounced(event.target.value);
   };
@@ -52703,7 +52704,7 @@ var TextArea = function TextArea(_ref) {
     var delayDebounceFn = setTimeout(function () {
       // console.log(value)
       // Send Axios request here
-    }, 5000);
+    }, 500);
     return function () {
       return clearTimeout(delayDebounceFn);
     };
@@ -52714,6 +52715,7 @@ var TextArea = function TextArea(_ref) {
     id: "outlined-multiline-static",
     label: configuration.label,
     multiline: true,
+    value: value === null ? '' : value,
     rows: configuration.rowsInit,
     onChange: handleOnChange,
     inputProps: {
@@ -52758,7 +52760,7 @@ function initTextArea() {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! regenerator-runtime/runtime.js */"./node_modules/regenerator-runtime/runtime.js");
-module.exports = __webpack_require__(/*! /Users/roman/shiny.muiinput/srcjs/main.jsx */"./srcjs/main.jsx");
+module.exports = __webpack_require__(/*! /Users/anastasiia/Documents/GitHub/shiny.muiinput/srcjs/main.jsx */"./srcjs/main.jsx");
 
 
 /***/ }),

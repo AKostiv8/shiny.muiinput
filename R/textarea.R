@@ -9,6 +9,7 @@
 textareaInput <- function(
     inputId,
     label,
+    value = NULL,
     rowsInit,
     secondaryColor = '#ffffff',
     mainColor = '#e05151'
@@ -23,7 +24,7 @@ textareaInput <- function(
       package = "shiny.muiinput",
       script = "bundle.js"
     ),
-    default = NULL,
+    default = value,
     configuration = list(
       label = label,
       rowsInit = rowsInit,

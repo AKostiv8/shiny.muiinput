@@ -27,14 +27,14 @@ const TextArea = ({ configuration, value, setValue }) => {
   const debounced = useDebouncedCallback(
      // function
      (value) => {
-          if(!value) {
+          if(!value || value === '') {
             setValue(null);
           } else {
             setValue(value);
           }
       },
       // delay in ms
-      500
+      50
   );
 
 
@@ -48,7 +48,7 @@ const TextArea = ({ configuration, value, setValue }) => {
     const delayDebounceFn = setTimeout(() => {
       // console.log(value)
       // Send Axios request here
-    }, 5000)
+    }, 500)
     return () => clearTimeout(delayDebounceFn)
   }, [value])
 
@@ -59,6 +59,7 @@ const TextArea = ({ configuration, value, setValue }) => {
           id="outlined-multiline-static"
           label={configuration.label}
           multiline
+          value={value === null ? '' : value}
           rows={configuration.rowsInit}
           onChange={handleOnChange}
           inputProps={{ style: { color: configuration.secondaryColor} }}

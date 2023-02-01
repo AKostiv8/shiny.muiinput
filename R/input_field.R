@@ -9,6 +9,7 @@
 input_fieldInput <- function(
   inputId, 
   label,
+  value          = NULL,
   variant        = c('outlined', 'filled', 'standard'),
   secondaryColor = '#ffffff',
   mainColor      = '#e05151'
@@ -26,7 +27,7 @@ input_fieldInput <- function(
       package = "shiny.muiinput",
       script = "bundle.js"
     ),
-    default = NULL,
+    default = value,
     list(
       label          = label,
       variant        = variant,

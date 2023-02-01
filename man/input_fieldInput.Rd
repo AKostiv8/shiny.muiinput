@@ -7,6 +7,7 @@
 input_fieldInput(
   inputId,
   label,
+  value = NULL,
   variant = c("outlined", "filled", "standard"),
   secondaryColor = "#ffffff",
   mainColor = "#e05151"

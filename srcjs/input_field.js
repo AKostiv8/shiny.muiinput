@@ -28,14 +28,14 @@ const TextInput = ({ configuration, value, setValue }) => {
       const debounced = useDebouncedCallback(
         // function
         (value) => {
-          if(!value) {
+          if(!value || value === '') {
             setValue(null);
           } else {
             setValue(value);
           }
         },
         // delay in ms
-        500
+        50
       );
 
 
@@ -51,6 +51,7 @@ const TextInput = ({ configuration, value, setValue }) => {
         <TextField 
             label={configuration.label} 
             variant={configuration.variant} 
+            value={value === null ? '' : value}
             onChange={handleOnChange} 
             color="neutral"
             inputProps={{ style: { color: configuration.secondaryColor} }}
